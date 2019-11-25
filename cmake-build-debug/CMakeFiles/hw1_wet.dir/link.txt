@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/hw1_wet.dir/libary1.cpp.o CMakeFiles/hw1_wet.dir/main.cpp.o  -o hw1_wet 

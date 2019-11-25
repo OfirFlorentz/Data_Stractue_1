@@ -1,3 +1,0 @@
-/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/CMakeFiles/hw1_wet.dir
-/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/CMakeFiles/edit_cache.dir
