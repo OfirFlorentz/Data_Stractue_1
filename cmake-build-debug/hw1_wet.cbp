@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Queue.cpp">
+			<Option target="hw1_wet"/>
+		</Unit>
+		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Queue.h">
+			<Option target="hw1_wet"/>
+		</Unit>
 		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/libary1.cpp">
 			<Option target="hw1_wet"/>
 		</Unit>
@@ -89,9 +95,6 @@
 			<Option target="hw1_wet"/>
 		</Unit>
 		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/main.cpp">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/main.h">
 			<Option target="hw1_wet"/>
 		</Unit>
 		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/CMakeLists.txt">

@@ -56,22 +56,9 @@ include CMakeFiles/hw1_wet.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/hw1_wet.dir/flags.make
 
-CMakeFiles/hw1_wet.dir/libary1.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
-CMakeFiles/hw1_wet.dir/libary1.cpp.obj: ../libary1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hw1_wet.dir/libary1.cpp.obj"
-	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\libary1.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp
-
-CMakeFiles/hw1_wet.dir/libary1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/libary1.cpp.i"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp > CMakeFiles\hw1_wet.dir\libary1.cpp.i
-
-CMakeFiles/hw1_wet.dir/libary1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/libary1.cpp.s"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp -o CMakeFiles\hw1_wet.dir\libary1.cpp.s
-
 CMakeFiles/hw1_wet.dir/main.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
 CMakeFiles/hw1_wet.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw1_wet.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/hw1_wet.dir/main.cpp.obj"
 	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\main.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\main.cpp
 
 CMakeFiles/hw1_wet.dir/main.cpp.i: cmake_force
@@ -82,21 +69,49 @@ CMakeFiles/hw1_wet.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/main.cpp.s"
 	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\main.cpp -o CMakeFiles\hw1_wet.dir\main.cpp.s
 
+CMakeFiles/hw1_wet.dir/libary1.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
+CMakeFiles/hw1_wet.dir/libary1.cpp.obj: ../libary1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw1_wet.dir/libary1.cpp.obj"
+	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\libary1.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp
+
+CMakeFiles/hw1_wet.dir/libary1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/libary1.cpp.i"
+	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp > CMakeFiles\hw1_wet.dir\libary1.cpp.i
+
+CMakeFiles/hw1_wet.dir/libary1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/libary1.cpp.s"
+	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp -o CMakeFiles\hw1_wet.dir\libary1.cpp.s
+
+CMakeFiles/hw1_wet.dir/Queue.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
+CMakeFiles/hw1_wet.dir/Queue.cpp.obj: ../Queue.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hw1_wet.dir/Queue.cpp.obj"
+	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\Queue.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Queue.cpp
+
+CMakeFiles/hw1_wet.dir/Queue.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/Queue.cpp.i"
+	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Queue.cpp > CMakeFiles\hw1_wet.dir\Queue.cpp.i
+
+CMakeFiles/hw1_wet.dir/Queue.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/Queue.cpp.s"
+	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Queue.cpp -o CMakeFiles\hw1_wet.dir\Queue.cpp.s
+
 # Object files for target hw1_wet
 hw1_wet_OBJECTS = \
+"CMakeFiles/hw1_wet.dir/main.cpp.obj" \
 "CMakeFiles/hw1_wet.dir/libary1.cpp.obj" \
-"CMakeFiles/hw1_wet.dir/main.cpp.obj"
+"CMakeFiles/hw1_wet.dir/Queue.cpp.obj"
 
 # External object files for target hw1_wet
 hw1_wet_EXTERNAL_OBJECTS =
 
-hw1_wet.exe: CMakeFiles/hw1_wet.dir/libary1.cpp.obj
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/main.cpp.obj
+hw1_wet.exe: CMakeFiles/hw1_wet.dir/libary1.cpp.obj
+hw1_wet.exe: CMakeFiles/hw1_wet.dir/Queue.cpp.obj
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/build.make
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/linklibs.rsp
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/objects1.rsp
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable hw1_wet.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable hw1_wet.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\hw1_wet.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

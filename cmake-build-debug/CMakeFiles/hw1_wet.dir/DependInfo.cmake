@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Queue.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/Queue.cpp.obj"
   "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/libary1.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/libary1.cpp.obj"
   "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/main.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/main.cpp.obj"
   )

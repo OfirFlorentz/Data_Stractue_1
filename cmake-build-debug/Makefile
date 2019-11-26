@@ -122,6 +122,33 @@ hw1_wet/fast:
 	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/build
 .PHONY : hw1_wet/fast
 
+Queue.obj: Queue.cpp.obj
+
+.PHONY : Queue.obj
+
+# target to build an object file
+Queue.cpp.obj:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/Queue.cpp.obj
+.PHONY : Queue.cpp.obj
+
+Queue.i: Queue.cpp.i
+
+.PHONY : Queue.i
+
+# target to preprocess a source file
+Queue.cpp.i:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/Queue.cpp.i
+.PHONY : Queue.cpp.i
+
+Queue.s: Queue.cpp.s
+
+.PHONY : Queue.s
+
+# target to generate assembly for a file
+Queue.cpp.s:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/Queue.cpp.s
+.PHONY : Queue.cpp.s
+
 libary1.obj: libary1.cpp.obj
 
 .PHONY : libary1.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... edit_cache
 	@echo ... hw1_wet
 	@echo ... rebuild_cache
+	@echo ... Queue.obj
+	@echo ... Queue.i
+	@echo ... Queue.s
 	@echo ... libary1.obj
 	@echo ... libary1.i
 	@echo ... libary1.s
