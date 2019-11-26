@@ -122,6 +122,33 @@ hw1_wet/fast:
 	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/build
 .PHONY : hw1_wet/fast
 
+Node.obj: Node.cpp.obj
+
+.PHONY : Node.obj
+
+# target to build an object file
+Node.cpp.obj:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/Node.cpp.obj
+.PHONY : Node.cpp.obj
+
+Node.i: Node.cpp.i
+
+.PHONY : Node.i
+
+# target to preprocess a source file
+Node.cpp.i:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/Node.cpp.i
+.PHONY : Node.cpp.i
+
+Node.s: Node.cpp.s
+
+.PHONY : Node.s
+
+# target to generate assembly for a file
+Node.cpp.s:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/Node.cpp.s
+.PHONY : Node.cpp.s
+
 Queue.obj: Queue.cpp.obj
 
 .PHONY : Queue.obj
@@ -148,6 +175,60 @@ Queue.s: Queue.cpp.s
 Queue.cpp.s:
 	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/Queue.cpp.s
 .PHONY : Queue.cpp.s
+
+ServerNode.obj: ServerNode.cpp.obj
+
+.PHONY : ServerNode.obj
+
+# target to build an object file
+ServerNode.cpp.obj:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/ServerNode.cpp.obj
+.PHONY : ServerNode.cpp.obj
+
+ServerNode.i: ServerNode.cpp.i
+
+.PHONY : ServerNode.i
+
+# target to preprocess a source file
+ServerNode.cpp.i:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/ServerNode.cpp.i
+.PHONY : ServerNode.cpp.i
+
+ServerNode.s: ServerNode.cpp.s
+
+.PHONY : ServerNode.s
+
+# target to generate assembly for a file
+ServerNode.cpp.s:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/ServerNode.cpp.s
+.PHONY : ServerNode.cpp.s
+
+ValueNode.obj: ValueNode.cpp.obj
+
+.PHONY : ValueNode.obj
+
+# target to build an object file
+ValueNode.cpp.obj:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/ValueNode.cpp.obj
+.PHONY : ValueNode.cpp.obj
+
+ValueNode.i: ValueNode.cpp.i
+
+.PHONY : ValueNode.i
+
+# target to preprocess a source file
+ValueNode.cpp.i:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/ValueNode.cpp.i
+.PHONY : ValueNode.cpp.i
+
+ValueNode.s: ValueNode.cpp.s
+
+.PHONY : ValueNode.s
+
+# target to generate assembly for a file
+ValueNode.cpp.s:
+	$(MAKE) -f CMakeFiles\hw1_wet.dir\build.make CMakeFiles/hw1_wet.dir/ValueNode.cpp.s
+.PHONY : ValueNode.cpp.s
 
 libary1.obj: libary1.cpp.obj
 
@@ -212,9 +293,18 @@ help:
 	@echo ... edit_cache
 	@echo ... hw1_wet
 	@echo ... rebuild_cache
+	@echo ... Node.obj
+	@echo ... Node.i
+	@echo ... Node.s
 	@echo ... Queue.obj
 	@echo ... Queue.i
 	@echo ... Queue.s
+	@echo ... ServerNode.obj
+	@echo ... ServerNode.i
+	@echo ... ServerNode.s
+	@echo ... ValueNode.obj
+	@echo ... ValueNode.i
+	@echo ... ValueNode.s
 	@echo ... libary1.obj
 	@echo ... libary1.i
 	@echo ... libary1.s
