@@ -14,6 +14,7 @@ AVLTree<T>::TreeNode::TreeNode(int id, const T& data) :
     right_child = nullptr;
 }
 
+
 template <class T>
 AVLTree<T>::TreeNode::~TreeNode() {
     delete data;

@@ -26,14 +26,13 @@ class AVLTree {
                 return this;
             }
             if (left_child != nullptr){
-                return searchNode(id);
+                return left_child->searchNode(id);
             }
             if (right_child != nullptr){
-                return searchNode(id);
+                return right_child->searchNode(id);
             }
             return nullptr;
         }
-
         };
     TreeNode* root;
 
