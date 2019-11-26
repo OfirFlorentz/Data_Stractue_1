@@ -6,7 +6,7 @@
 
 template <class T>
 AVLTree<T>::TreeNode::TreeNode(int id, const T& data) :
-        id(id), height(height) {
+        key(id), height(height) {
     T* copied_data = T(data);
     this->data = copied_data;
     height = 0;
@@ -30,14 +30,16 @@ AVLTree<T>::~AVLTree() {
     delete root;
 }
 
+
+
 /*
 template <class T>
-AVLStatus AVLTree<T>::insertTreeNode(int id, const T& data) const {
-    TreeNode node = new TreeNode(id, data);
+AVLStatus AVLTree<T>::insertTreeNode(int key, const T& data) const {
+    TreeNode node = new TreeNode(key, data);
     if (node == nullptr) {
         return AVL_OUT_OF_MEMORY;
     }
-    node.id = id;
+    node.key = key;
     node.data = T(data);
     return AVL_SUCESS;
 }*/
