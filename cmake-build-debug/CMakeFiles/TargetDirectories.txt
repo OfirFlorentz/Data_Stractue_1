@@ -1,3 +1,0 @@
-C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir
-C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/rebuild_cache.dir
