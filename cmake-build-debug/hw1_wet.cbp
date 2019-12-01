@@ -82,34 +82,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Node.cpp">
+		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/DC.cpp">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Node.h">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Queue.cpp">
+		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/DC.h">
 			<Option target="hw1_wet"/>
 		</Unit>
 		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Queue.h">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/ServerNode.cpp">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/ServerNode.h">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/ValueNode.cpp">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/ValueNode.h">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/libary1.cpp">
-			<Option target="hw1_wet"/>
-		</Unit>
-		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/libary1.h">
 			<Option target="hw1_wet"/>
 		</Unit>
 		<Unit filename="C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/main.cpp">

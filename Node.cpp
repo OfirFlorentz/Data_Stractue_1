@@ -3,93 +3,63 @@
 //
 
 #include "Node.h"
-#include <iostream>
 
-ServerNode:: ServerNode(int server_id, ValueNode* value):server_id(server_id), value(value) {
-    left = nullptr;
-    right = nullptr;
-};
-
-int ServerNode::getId() {
-    return server_id;
+bool operator > (const DCNode &first, const DCNode &second) {
+    if(first.value > second.value)
+        return true;
+    else if(first.value < second.value)
+        return false;
+    return (first.id>second.id);
 }
 
-void ServerNode::valueIncrease() {
-    if (left != nullptr)
-        left->setRight(right);
-    if (right != nullptr)
-        right->setLeft(left);
-    int cur_value = value->getValue();
-    ValueNode* old = value;
-    if (cur_value + 1 == value->getUp()->getValue()) {
-        value = value->getUp();
-    } else {
-        ValueNode* new_node = new ValueNode(cur_value + 1);
-        new_node->setUp(value->getUp());
-        new_node->setDown(value);
-        value->setUp(new_node);
-        value = new_node;
-    }
-    value->addServer(*this);
-    if(old->isEmpty())
-        delete old;
-}
-
-void ServerNode::valueDecrease() {
-    if (left != nullptr)
-        left->setRight(right);
-    if (right != nullptr)
-        right->setLeft(left);
-    int cur_value = value->getValue();
-    ValueNode* old = value;
-    if (cur_value -1  == value->getDown()->getValue()) {
-        value = value->getUp();
-    } else {
-        ValueNode* new_node = new ValueNode(cur_value - 1);
-        new_node->setDown(value->getDown());
-        new_node->setUp(value);
-        value->setDown(new_node);
-        value = new_node;
-    }
-    value->addServer(*this);
-    if(old->isEmpty())
-        delete old;
+bool operator < (const DCNode &first, const DCNode &second) {
+    return (!(first>second) && !(first==second));
 }
 
 
-void ServerNode::setRight(ServerNode *server){
-    right = server;
+bool operator <= (const DCNode &first, const DCNode &second) {
+    return (first<second) || (first==second);
 }
 
-void ServerNode::setLeft(ServerNode *server){
-    left = server;
+bool operator >= (const DCNode &first, const DCNode &second) {
+    return (first>second) || (first==second);
 }
 
-void ServerNode::setValue(ValueNode *val){
-    value = val;
+bool  operator == (const DCNode &first, const DCNode &second) {
+    return (first.id == second.id);
 }
 
-//end of Server Node Function
-//start of Value Node function
 
-ValueNode::ValueNode(int value): value(value) {
+int DCNode::getId() const {
+    return id;
+}
+
+int DCNode::getValue() const {
+    return value;
+}
+
+DCNode::DCNode(int id, int value) : id(id), value(value){
+}
+
+//--------------------------------------------------------------------//
+//                                end of Dc                           //
+/*
+ValueNode::ValueNode(int value): value(value), servers(), size(0) {
     up = nullptr;
     down = nullptr;
-    first_server = nullptr;
 }
 
-ValueNode::~ValueNode() {
-    up->setDown(down);
-    down->setUp(up);
-}
 
 int ValueNode::getValue() const {
     return value;
 }
 
+int ValueNode::getSize() const {
+    return size;
+}
 
 bool ValueNode::isEmpty() const {
-    return first_server == nullptr;
+    return servers.isEmpty();
 }
 
 ValueNode* ValueNode::getUp(){
@@ -109,12 +79,13 @@ void ValueNode::setDown(ValueNode *val){
     down=val;
 }
 
-void ValueNode::addServer(ServerNode& server){
-    ServerNode* old = first_server;
-    first_server = &server;
-    first_server->setRight(old);
-    if(old != nullptr){
-        old->setLeft(first_server);
-    }
+void ValueNode::addServer(DCNode& server){
+    servers.addServer(server);
 }
+
+
+void ValueNode::removeServer(DCNode& server){
+    servers.removeServer(server);
+}
+*/
 

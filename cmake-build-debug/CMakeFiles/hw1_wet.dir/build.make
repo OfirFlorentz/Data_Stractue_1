@@ -69,94 +69,34 @@ CMakeFiles/hw1_wet.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/main.cpp.s"
 	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\main.cpp -o CMakeFiles\hw1_wet.dir\main.cpp.s
 
-CMakeFiles/hw1_wet.dir/libary1.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
-CMakeFiles/hw1_wet.dir/libary1.cpp.obj: ../libary1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw1_wet.dir/libary1.cpp.obj"
-	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\libary1.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp
+CMakeFiles/hw1_wet.dir/DC.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
+CMakeFiles/hw1_wet.dir/DC.cpp.obj: ../DC.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/hw1_wet.dir/DC.cpp.obj"
+	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\DC.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\DC.cpp
 
-CMakeFiles/hw1_wet.dir/libary1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/libary1.cpp.i"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp > CMakeFiles\hw1_wet.dir\libary1.cpp.i
+CMakeFiles/hw1_wet.dir/DC.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/DC.cpp.i"
+	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\DC.cpp > CMakeFiles\hw1_wet.dir\DC.cpp.i
 
-CMakeFiles/hw1_wet.dir/libary1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/libary1.cpp.s"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\libary1.cpp -o CMakeFiles\hw1_wet.dir\libary1.cpp.s
-
-CMakeFiles/hw1_wet.dir/Queue.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
-CMakeFiles/hw1_wet.dir/Queue.cpp.obj: ../Queue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/hw1_wet.dir/Queue.cpp.obj"
-	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\Queue.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Queue.cpp
-
-CMakeFiles/hw1_wet.dir/Queue.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/Queue.cpp.i"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Queue.cpp > CMakeFiles\hw1_wet.dir\Queue.cpp.i
-
-CMakeFiles/hw1_wet.dir/Queue.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/Queue.cpp.s"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Queue.cpp -o CMakeFiles\hw1_wet.dir\Queue.cpp.s
-
-CMakeFiles/hw1_wet.dir/ValueNode.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
-CMakeFiles/hw1_wet.dir/ValueNode.cpp.obj: ../ValueNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/hw1_wet.dir/ValueNode.cpp.obj"
-	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\ValueNode.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\ValueNode.cpp
-
-CMakeFiles/hw1_wet.dir/ValueNode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/ValueNode.cpp.i"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\ValueNode.cpp > CMakeFiles\hw1_wet.dir\ValueNode.cpp.i
-
-CMakeFiles/hw1_wet.dir/ValueNode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/ValueNode.cpp.s"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\ValueNode.cpp -o CMakeFiles\hw1_wet.dir\ValueNode.cpp.s
-
-CMakeFiles/hw1_wet.dir/ServerNode.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
-CMakeFiles/hw1_wet.dir/ServerNode.cpp.obj: ../ServerNode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/hw1_wet.dir/ServerNode.cpp.obj"
-	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\ServerNode.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\ServerNode.cpp
-
-CMakeFiles/hw1_wet.dir/ServerNode.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/ServerNode.cpp.i"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\ServerNode.cpp > CMakeFiles\hw1_wet.dir\ServerNode.cpp.i
-
-CMakeFiles/hw1_wet.dir/ServerNode.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/ServerNode.cpp.s"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\ServerNode.cpp -o CMakeFiles\hw1_wet.dir\ServerNode.cpp.s
-
-CMakeFiles/hw1_wet.dir/Node.cpp.obj: CMakeFiles/hw1_wet.dir/flags.make
-CMakeFiles/hw1_wet.dir/Node.cpp.obj: ../Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/hw1_wet.dir/Node.cpp.obj"
-	C:\TDM-GCC-64\bin\c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\hw1_wet.dir\Node.cpp.obj -c C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Node.cpp
-
-CMakeFiles/hw1_wet.dir/Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hw1_wet.dir/Node.cpp.i"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Node.cpp > CMakeFiles\hw1_wet.dir\Node.cpp.i
-
-CMakeFiles/hw1_wet.dir/Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/Node.cpp.s"
-	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\Node.cpp -o CMakeFiles\hw1_wet.dir\Node.cpp.s
+CMakeFiles/hw1_wet.dir/DC.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hw1_wet.dir/DC.cpp.s"
+	C:\TDM-GCC-64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\DC.cpp -o CMakeFiles\hw1_wet.dir\DC.cpp.s
 
 # Object files for target hw1_wet
 hw1_wet_OBJECTS = \
 "CMakeFiles/hw1_wet.dir/main.cpp.obj" \
-"CMakeFiles/hw1_wet.dir/libary1.cpp.obj" \
-"CMakeFiles/hw1_wet.dir/Queue.cpp.obj" \
-"CMakeFiles/hw1_wet.dir/ValueNode.cpp.obj" \
-"CMakeFiles/hw1_wet.dir/ServerNode.cpp.obj" \
-"CMakeFiles/hw1_wet.dir/Node.cpp.obj"
+"CMakeFiles/hw1_wet.dir/DC.cpp.obj"
 
 # External object files for target hw1_wet
 hw1_wet_EXTERNAL_OBJECTS =
 
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/main.cpp.obj
-hw1_wet.exe: CMakeFiles/hw1_wet.dir/libary1.cpp.obj
-hw1_wet.exe: CMakeFiles/hw1_wet.dir/Queue.cpp.obj
-hw1_wet.exe: CMakeFiles/hw1_wet.dir/ValueNode.cpp.obj
-hw1_wet.exe: CMakeFiles/hw1_wet.dir/ServerNode.cpp.obj
-hw1_wet.exe: CMakeFiles/hw1_wet.dir/Node.cpp.obj
+hw1_wet.exe: CMakeFiles/hw1_wet.dir/DC.cpp.obj
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/build.make
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/linklibs.rsp
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/objects1.rsp
 hw1_wet.exe: CMakeFiles/hw1_wet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable hw1_wet.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\ofir\Desktop\courses\20-winter\data_stracture\hw1_wet\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable hw1_wet.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\hw1_wet.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

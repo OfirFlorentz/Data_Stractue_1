@@ -4,11 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Node.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/Node.cpp.obj"
-  "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Queue.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/Queue.cpp.obj"
-  "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/ServerNode.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/ServerNode.cpp.obj"
-  "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/ValueNode.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/ValueNode.cpp.obj"
-  "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/libary1.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/libary1.cpp.obj"
+  "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/DC.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/DC.cpp.obj"
   "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/main.cpp" "C:/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/CMakeFiles/hw1_wet.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
