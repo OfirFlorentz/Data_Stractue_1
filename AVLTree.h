@@ -66,67 +66,35 @@ class AVLTree {
 
 
         TreeNode* llRotate(){
-            std::cout << "check2" << std::endl;
+            std::cout << "llRotate" << std::endl;
             TreeNode* node = this->left_child;
             this->left_child = this->left_child->right_child;
             node->right_child = this;
             return node;
         }
         TreeNode* rrRotate(){
-            std::cout << "check1" << std::endl;
+            std::cout << "rrRotate" << std::endl;
             std::cout << this->height << std::endl;
-            //this->right_child->height = this->height;
-            //std::cout << this->right_child->height << std::endl;
             TreeNode* node = this->right_child;
             this->right_child = this->right_child->left_child;
             node->left_child = this;
             return node;
         }
         TreeNode* rlRotate(){
-            std::cout << "check3" << std::endl;
+            std::cout << "rlRotate" << std::endl;
             this->right_child = this->right_child->llRotate();
             TreeNode* node = this->rrRotate();
             return node;
         }
         TreeNode* lrRotate(){
-            std::cout << "check4" << std::endl;
+            std::cout << "lrRotate" << std::endl;
             this->left_child = this->left_child->rrRotate();
             TreeNode* node = this->llRotate();
             return node;
         }
 
-/*        void balanceTree (TreeNode* parent, bool is_left){
-            if (getBalanceFactor(this) == 2 &&
-                                    getBalanceFactor(this->left_child) == -1){
-                if (is_left){
-                    parent->left_child = this->lrRotate();
-                } else {
-                    parent->right_child = this->lrRotate();
-                }
-            } else if (getBalanceFactor(this) == 2 &&
-                                    getBalanceFactor(this->left_child) >= 0){
-                if (is_left){
-                    parent->left_child = this->llRotate();
-                } else {
-                    parent->right_child = this->llRotate();
-                }
-            } else if (getBalanceFactor(this) == -2 &&
-                                    getBalanceFactor(this->right_child) <= 0){
-                if (is_left){
-                    parent->left_child = this->rrRotate();
-                } else {
-                    parent->right_child = this->rrRotate();
-                }
-            } else if (getBalanceFactor(this) == -2 &&
-                                    getBalanceFactor(this->right_child) == 1){
-                if (is_left){
-                    parent->left_child = this->rlRotate();
-                } else {
-                    parent->right_child = this->rlRotate();
-                }
-            }
-        }*/
         TreeNode* balanceTree (){
+            this->height = max(getHeight(right_child),getHeight(left_child))+1;
             if (getBalanceFactor(this) == 2 &&
                 getBalanceFactor(this->left_child) == -1){
                 return this->lrRotate();
@@ -146,62 +114,29 @@ class AVLTree {
 
         TreeNode* insertNode(T* new_data){
             TreeNode* new_node = new TreeNode(new_data);
-            if (*new_data > *data){
-                if (right_child != NULL){
+            if (*new_data > *data) {
+                if (right_child != NULL) {
                     right_child = right_child->insertNode(new_data);
-                    this->height = max(getHeight(right_child),getHeight(left_child))+1;
                     return this->balanceTree();
                 } else {
                     right_child = new_node;
                     return this;
                 }
-            }
-            if (*new_data < *data){
+            } else if (*new_data < *data){
                 if (left_child != NULL){
                     left_child = left_child->insertNode(new_data);
-                    this->height = max(getHeight(right_child),getHeight(left_child))+1;
                     return this->balanceTree();
                 } else {
-                    return new_node;
+                    left_child = new_node;
+                    return this;
                 }
+            } else if (*new_data == *data){
+                delete this->data;
+                this->data = new_data;
+                return this;
             }
-        }
 
-
-/*
-        void insertNode( T* new_data, TreeNode * parent, bool is_left) {
-            TreeNode* new_node = new TreeNode(new_data);
-            if (*new_data > getData()) {
-                if (right_child != NULL) {
-                    right_child->insertNode(new_data, this, false);
-                    this->balanceTree(parent, is_left);
-                    this->height=std::max(getHeight(this->right_child),getHeight(this->left_child)) + 1;
-                } else {
-                    this->right_child = new_node;
-                }
-            } else if (*new_data < getData()) {
-                if (left_child != NULL) {
-                    left_child->insertNode(new_data, this, true);
-                    this->balanceTree(parent, is_left);
-                    this->height=std::max(getHeight(this->right_child),getHeight(this->left_child)) + 1;
-                } else {
-                    this->left_child = new_node;
-                }
-            } else if (*new_data == getData()) {
-                new_node->height = this->height;
-                new_node->left_child = this->left_child;
-                new_node->right_child = this->right_child;
-                if (is_left) {
-                    delete parent->getLeft();
-                    parent->setLeft(new_node);
-                } else {
-                    delete parent->getRight();
-                    parent->setRight(new_node);
-                }
-                return;
-            }
         }
-*/
 
         static int getHeight (TreeNode* node){
             if (node == NULL){
@@ -215,27 +150,12 @@ class AVLTree {
             return this->height;
         }
 
-        int getBalanceFactor (){
-            return getBalanceFactor(this);
-        }
-
         static int getBalanceFactor (const TreeNode * node){
             if (node == NULL){
                 return 0;
             } else {
                 return getHeight(node->left_child) - getHeight(node->right_child);
             }
-        }
-
-        bool isChild (const T& compare_data){
-            if (compare_data > data){
-                return this->right_child->isChild(compare_data);
-            } else if (compare_data < data){
-                return this->left_child->isChild(compare_data);
-            } else if (compare_data == data){
-                return true;
-            }
-            return false;
         }
 
         void inorderOutput(){
@@ -255,16 +175,6 @@ class AVLTree {
             if (right_child != NULL){
                 right_child->inorderOutput();
             }
-        }
-
-        void updateHeight(T* target_data){
-            if (*target_data < *data && left_child != NULL){
-                left_child->updateHeight(target_data);
-            }
-            if (*target_data > *data && right_child != NULL){
-                right_child->updateHeight(target_data);
-            }
-            height = std::max(getHeight(left_child),getHeight(right_child)) + 1;
         }
     };
 
@@ -289,88 +199,22 @@ public:
         return num_nodes;
     }
 
-
-    void balanceRoot (){
-        if (root->getBalanceFactor() == 2 &&
-                    this->root->getLeft()->getBalanceFactor() == -1){
-            this->root = root->lrRotate();
-        } else if (root->getBalanceFactor() == 2 &&
-                   this->root->getLeft()->getBalanceFactor() >= 0){
-            this->root = root->llRotate();
-        } else if (root->getBalanceFactor() == -2 &&
-                   this->root->getRight()->getBalanceFactor() <= 0){
-            this->root = root->rrRotate();
-        } else if (root->getBalanceFactor() == -2 &&
-                   this->root->getRight()->getBalanceFactor() == 1){
-            this->root = root->rlRotate();
-        }
-    }
-
     AVLStatus insertTreeNode(T* data){
         if (data == NULL){
             return AVL_NULL_POINTER;
         }
         if (root == NULL){
             root = new TreeNode(data);
-        } else{
+        } else {
             root = root->insertNode(data);
         }
     }
-
-/*
-    AVLStatus insertTreeNode(T* data){
-        if(!data){
-            return AVL_NULL_POINTER;
-        }
-        TreeNode* node;
-        if (root == NULL){
-            root = new TreeNode(data);
-        }
-        else if (*data == root->getData()){
-            node = new TreeNode(data);
-            node->setLeft(root->getLeft());
-            node->setRight(root->getRight());
-            node->setHeight(root->getHeight());
-            delete root;
-            root = node;
-        } else if (*data < root->getData()){
-            if ( root->getLeft() != NULL ){
-                root->getLeft()->insertNode(data, root, true);
-                this->balanceRoot();
-            } else {
-                node = new TreeNode(data);
-                root->setLeft(node);
-            }
-        } else if (*data > root->getData()){
-            if ( root->getRight() != NULL ){
-                root->getRight()->insertNode(data, root, false);
-                this->balanceRoot();
-            } else {
-                node = new TreeNode(data);
-                root->setRight(node);
-            }
-        }
-        root->updateHeight(data);
-        if (root->getRight() == NULL && root->getLeft() == NULL){
-            root->setHeight(0);
-        } else if (root->getRight() == NULL && root->getLeft() != NULL){
-            root->setHeight(root->getLeft()->getHeight() + 1);
-        } else if (root->getLeft() == NULL && root->getRight() != NULL){
-            root->setHeight(root->getRight()->getHeight() + 1);
-        } else {
-            root->setHeight(std::max(root->getRight()->getHeight(),root->getLeft()->getHeight())+1);
-        }
-        return AVL_SUCESS;
-    }
-*/
 
     void printTree(){
         if (root != NULL){
             root->inorderOutput();
         }
     }
-
-
 
     };
 
