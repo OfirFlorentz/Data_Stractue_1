@@ -324,10 +324,10 @@ T **AVLTree<T>::inorderArr() {
     if (num_nodes == 0){
         return NULL;
     }
-    T** inorderArr = new T*[num_nodes];
+    T** in_order_arr = new T*[num_nodes];
     int index = 0;
-    root->fillInorderArr(&index,inorderArr);
-    return inorderArr;
+    root->fillInorderArr(&index,in_order_arr);
+    return in_order_arr;
 }
 
 

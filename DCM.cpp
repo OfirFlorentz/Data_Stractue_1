@@ -18,6 +18,7 @@ StatusType DCM::addDataCenter(int id, int num_of_servers) {
     DCNode* new_linux = new DCNode(id, num_of_servers);
     windows_tree.insertTreeNode(new_windows);
     linux_tree.insertTreeNode(new_linux);
+    servers_counter++;
     return SUCCESS;
 }
 
@@ -25,12 +26,13 @@ StatusType DCM::removeDataCenter(int id) {
     if (id <= 0)
         return INVALID_INPUT;
     DC temp(id, 1);
-    AVLStatus t = dc_tree.removeTreeNode(&temp);
-    if(t == NODE_NOT_EXIST)
+    AVLStatus result = dc_tree.removeTreeNode(&temp);
+    if(result == NODE_NOT_EXIST)
         return FAILURE;
     DCNode node_temp(id,1);
     windows_tree.removeTreeNode(&node_temp); //num of servers is not importent for compering
     linux_tree.removeTreeNode(&node_temp);
+    servers_counter++;
     return SUCCESS;
 }
 
@@ -91,5 +93,24 @@ StatusType DCM::freeServer(int dc_id, int server_id) {
         return FAILURE;
     }
     return SUCCESS;
+}
+
+StatusType DCM::GetDataCentersByOS(int os, int **dataCenters, int *numOfDataCenters) {
+    *numOfDataCenters = servers_counter;
+    DCNode** in_order_elements;
+    *dataCenters= new int[servers_counter];
+
+    if(os == 0) {
+        in_order_elements = linux_tree.inorderArr();
+    } else {
+        in_order_elements = windows_tree.inorderArr();
+    }
+    int j =0;
+    for(int i = servers_counter-1; i>=0; i--) {
+
+        (*dataCenters)[j++] = in_order_elements[i]->getId();
+        //cout << in_order_elements[i]->getId() << endl;
+
+    }
 }
 

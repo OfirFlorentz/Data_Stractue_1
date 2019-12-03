@@ -121,6 +121,10 @@ int DC::numOfServers() const {
     return num_of_servers;
 }
 
+int DC::getID() const {
+    return id;
+}
+
 
 bool operator>(const DC & first, const DC & second) {
     return (!(first < second) && !(first==second));

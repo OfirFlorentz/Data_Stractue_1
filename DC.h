@@ -39,6 +39,7 @@ public:
     int numOfWindows() const;
     int numOfLinux() const;
     int numOfServers() const;
+    int getID() const;
 
     friend bool operator ==(const DC&, const DC&);
     friend bool operator ==(DC&, DC&);
