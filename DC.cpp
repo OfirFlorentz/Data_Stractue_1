@@ -101,8 +101,20 @@ bool operator==(const DC & first, const DC & second) {
     return(first.id == second.id);
 }
 
+bool operator==( DC & first,  DC & second) {
+    return(first.id == second.id);
+}
+
 bool operator<(const DC & first, const DC & second) {
     return first.id < second.id;
+}
+
+bool operator<(DC & first, DC & second) {
+    return first.id < second.id;
+}
+
+ostream &operator<<(ostream &os, const DC &dc) {
+    return os << dc.id;
 }
 
 
@@ -110,6 +122,9 @@ bool operator>(const DC & first, const DC & second) {
     return (!(first < second) && !(first==second));
 }
 
+bool operator>( DC & first,  DC & second) {
+    return (!(first < second) && !(first==second));
+}
 
 bool operator<=(const DC & first, const DC & second) {
     return ((first < second) || (first==second));

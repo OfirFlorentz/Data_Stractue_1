@@ -12,6 +12,7 @@
 enum StatusType { INVALID_INPUT, FAILURE, SUCCESS};
 enum OS {LINUX, WINDOWS};
 
+using namespace std;
 
 struct Server{
     bool busy;
@@ -39,7 +40,10 @@ public:
     int numOfLinux() const;
 
     friend bool operator ==(const DC&, const DC&);
+    friend bool operator ==(DC&, DC&);
     friend bool operator < (const DC&, const DC&);
+    friend bool operator < (DC&, DC&);
+    friend ostream& operator<<(ostream& os, const DC& dc);
 
 
     class InvalidInput : public std::exception {
