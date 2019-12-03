@@ -5,6 +5,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DC.cpp" "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/CMakeFiles/hw1_wet.dir/DC.cpp.o"
+  "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DCM.cpp" "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/CMakeFiles/hw1_wet.dir/DCM.cpp.o"
+  "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/Node.cpp" "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/CMakeFiles/hw1_wet.dir/Node.cpp.o"
   "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/main.cpp" "/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/CMakeFiles/hw1_wet.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

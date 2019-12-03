@@ -90,6 +90,18 @@
 		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DC.h">
 			<Option target="hw1_wet"/>
 		</Unit>
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DCM.cpp">
+			<Option target="hw1_wet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DCM.h">
+			<Option target="hw1_wet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/Node.cpp">
+			<Option target="hw1_wet"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/Node.h">
+			<Option target="hw1_wet"/>
+		</Unit>
 		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/Queue.h">
 			<Option target="hw1_wet"/>
 		</Unit>

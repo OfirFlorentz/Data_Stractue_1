@@ -42,6 +42,7 @@ class AVLTree {
         T& getData() {
             return *data;
         }
+/*
         void setLeft(TreeNode* node){
             this->left_child = node;
         }
@@ -51,6 +52,7 @@ class AVLTree {
         void setHeight(int new_height){
             this->height = new_height;
         }
+*/
 
 
 
@@ -228,23 +230,7 @@ class AVLTree {
             }
         }
 
-        T* getData(T* target_data){
-            if (*data == *target_data){
-                return data;
-            } else if (*target_data < *data){
-                if (left_child != NULL){
-                    return left_child->getData(target_data);
-                } else {
-                    return NULL;
-                }
-            } else if (*data < *target_data){
-                if (right_child != NULL){
-                    return right_child->getData(target_data);
-                } else {
-                    return NULL;
-                }
-            }
-        }
+        T* getData(T* target_data);
     };
 
     TreeNode* root;
@@ -286,8 +272,14 @@ AVLStatus AVLTree<T>::insertTreeNode(T *data) {
     }
     if (root == NULL){
         root = new TreeNode(data);
+        num_nodes++;
     } else {
+        T* old_data = root->getData(data);
         root = root->insertNode(data);
+        T* new_data = root->getData(data);
+        if (old_data == NULL && new_data != NULL){
+            num_nodes++;
+        }
     }
     return AVL_SUCCESS;
 }
@@ -296,7 +288,10 @@ template<class T>
 AVLStatus AVLTree<T>::removeTreeNode(T *data) {
     if (root == NULL){
         return NODE_NOT_EXIST;
+    } else if (root->getData(data) == NULL) {
+        return NODE_NOT_EXIST;
     } else {
+        num_nodes--;
         root = root->removeTreeNode(data);
         return AVL_SUCCESS;
     }
@@ -343,6 +338,25 @@ AVLTree<T>::TreeNode::~TreeNode() {
     }
     if (right_child != NULL){
         delete right_child;
+    }
+}
+
+template<class T>
+T *AVLTree<T>::TreeNode::getData(T *target_data) {
+    if (*data == *target_data){
+        return data;
+    } else if (*target_data < *data){
+        if (left_child != NULL){
+            return left_child->getData(target_data);
+        } else {
+            return NULL;
+        }
+    } else if (*data < *target_data){
+        if (right_child != NULL){
+            return right_child->getData(target_data);
+        } else {
+            return NULL;
+        }
     }
 }
 

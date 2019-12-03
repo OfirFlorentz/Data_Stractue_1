@@ -150,6 +150,60 @@ DC.cpp.s:
 	$(MAKE) -f CMakeFiles/hw1_wet.dir/build.make CMakeFiles/hw1_wet.dir/DC.cpp.s
 .PHONY : DC.cpp.s
 
+DCM.o: DCM.cpp.o
+
+.PHONY : DCM.o
+
+# target to build an object file
+DCM.cpp.o:
+	$(MAKE) -f CMakeFiles/hw1_wet.dir/build.make CMakeFiles/hw1_wet.dir/DCM.cpp.o
+.PHONY : DCM.cpp.o
+
+DCM.i: DCM.cpp.i
+
+.PHONY : DCM.i
+
+# target to preprocess a source file
+DCM.cpp.i:
+	$(MAKE) -f CMakeFiles/hw1_wet.dir/build.make CMakeFiles/hw1_wet.dir/DCM.cpp.i
+.PHONY : DCM.cpp.i
+
+DCM.s: DCM.cpp.s
+
+.PHONY : DCM.s
+
+# target to generate assembly for a file
+DCM.cpp.s:
+	$(MAKE) -f CMakeFiles/hw1_wet.dir/build.make CMakeFiles/hw1_wet.dir/DCM.cpp.s
+.PHONY : DCM.cpp.s
+
+Node.o: Node.cpp.o
+
+.PHONY : Node.o
+
+# target to build an object file
+Node.cpp.o:
+	$(MAKE) -f CMakeFiles/hw1_wet.dir/build.make CMakeFiles/hw1_wet.dir/Node.cpp.o
+.PHONY : Node.cpp.o
+
+Node.i: Node.cpp.i
+
+.PHONY : Node.i
+
+# target to preprocess a source file
+Node.cpp.i:
+	$(MAKE) -f CMakeFiles/hw1_wet.dir/build.make CMakeFiles/hw1_wet.dir/Node.cpp.i
+.PHONY : Node.cpp.i
+
+Node.s: Node.cpp.s
+
+.PHONY : Node.s
+
+# target to generate assembly for a file
+Node.cpp.s:
+	$(MAKE) -f CMakeFiles/hw1_wet.dir/build.make CMakeFiles/hw1_wet.dir/Node.cpp.s
+.PHONY : Node.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +243,12 @@ help:
 	@echo "... DC.o"
 	@echo "... DC.i"
 	@echo "... DC.s"
+	@echo "... DCM.o"
+	@echo "... DCM.i"
+	@echo "... DCM.s"
+	@echo "... Node.o"
+	@echo "... Node.i"
+	@echo "... Node.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

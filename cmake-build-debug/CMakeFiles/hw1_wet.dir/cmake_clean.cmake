@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hw1_wet.dir/main.cpp.o"
   "CMakeFiles/hw1_wet.dir/DC.cpp.o"
+  "CMakeFiles/hw1_wet.dir/Node.cpp.o"
+  "CMakeFiles/hw1_wet.dir/DCM.cpp.o"
   "hw1_wet.pdb"
   "hw1_wet"
 )

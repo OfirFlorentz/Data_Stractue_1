@@ -5,6 +5,16 @@ CMakeFiles/hw1_wet.dir/DC.cpp.o: ../DC.cpp
 CMakeFiles/hw1_wet.dir/DC.cpp.o: ../DC.h
 CMakeFiles/hw1_wet.dir/DC.cpp.o: ../Queue.h
 
+CMakeFiles/hw1_wet.dir/DCM.cpp.o: ../AVLTree.h
+CMakeFiles/hw1_wet.dir/DCM.cpp.o: ../DC.h
+CMakeFiles/hw1_wet.dir/DCM.cpp.o: ../DCM.cpp
+CMakeFiles/hw1_wet.dir/DCM.cpp.o: ../DCM.h
+CMakeFiles/hw1_wet.dir/DCM.cpp.o: ../Node.h
+CMakeFiles/hw1_wet.dir/DCM.cpp.o: ../Queue.h
+
+CMakeFiles/hw1_wet.dir/Node.cpp.o: ../Node.cpp
+CMakeFiles/hw1_wet.dir/Node.cpp.o: ../Node.h
+
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../AVLTree.h
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../DC.h
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../Queue.h
