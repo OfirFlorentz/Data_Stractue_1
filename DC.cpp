@@ -5,7 +5,7 @@
 #include "DC.h"
 
 //we have to check in dcm there is no other DC with same id
-DC::DC(int id, int num_of_servers) : id(id), num_of_servers(num_of_servers), num_of_windows(0), windows(),linux() {
+DC::DC(int id, int num_of_servers) : id(id), num_of_servers(num_of_servers), num_of_windows(0), windows(),lin() {
     if(id <= 0 || num_of_servers <= 0)
         throw InvalidInput();
     servers = new Server*[num_of_servers];
@@ -15,7 +15,7 @@ DC::DC(int id, int num_of_servers) : id(id), num_of_servers(num_of_servers), num
         servers[i]->os = 0;
         servers[i]->busy = false;
         servers[i]->server_num = i;
-        servers_in_q[i] = linux.enqueue(*servers[i]);
+        servers_in_q[i] = lin.enqueue(*servers[i]);
     }
 }
 
@@ -29,7 +29,7 @@ void DC::freeServer(int server_id) {
       if(servers[server_id]->os == 1)
           servers_in_q[server_id] = windows.enqueue(*servers[server_id]);
       else
-          servers_in_q[server_id] = linux.enqueue(*servers[server_id]);
+          servers_in_q[server_id] = lin.enqueue(*servers[server_id]);
     }
 }
 
@@ -40,7 +40,7 @@ int DC::requestServer(int server_id, bool os) {
     if (servers[server_id]->busy == false) {
         s_num = server_id;
         if (servers[server_id]->os == 0) {
-            linux.dequeueByValue(servers_in_q[server_id]);
+            lin.dequeueByValue(servers_in_q[server_id]);
         } else {
             windows.dequeueByValue(servers_in_q[server_id]);
         }
@@ -52,9 +52,9 @@ int DC::requestServer(int server_id, bool os) {
             servers[server_id]->os = os;
         }
     } else if (os == 0) {
-        if (!linux.isEmpty()) {
-            s_num = linux.top().server_num;
-            linux.dequeue();
+        if (!lin.isEmpty()) {
+            s_num = lin.top().server_num;
+            lin.dequeue();
         } else if (!windows.isEmpty()) {
             s_num = windows.top().server_num;
             servers[s_num]->os = 0;
@@ -67,10 +67,10 @@ int DC::requestServer(int server_id, bool os) {
         if (!windows.isEmpty()) {
             s_num = windows.top().server_num;
             windows.dequeue();
-        } else if (!linux.isEmpty()) {
-            s_num = linux.top().server_num;
+        } else if (!lin.isEmpty()) {
+            s_num = lin.top().server_num;
             servers[s_num]->os = 1;
-            linux.dequeue();
+            lin.dequeue();
             num_of_windows ++;
         } else {
             throw Failure();

@@ -9,6 +9,7 @@
 #include <iostream>
 #include "Queue.h"
 
+enum StatusType { INVALID_INPUT, FAILURE, SUCCESS};
 enum OS {LINUX, WINDOWS};
 
 
@@ -22,20 +23,11 @@ class DC {
     int id;
     int num_of_servers;
     Queue<Server> windows;
-    Queue<Server> linux;
+    Queue<Server> lin;
     int num_of_windows;
     Server** servers;
     Chain<Server>** servers_in_q;
-    class InvalidInput : public std::exception {
-        const char* what() const throw() override{
-            return "invalid input";
-        }
-    };
-    class Failure : public std::exception {
-        const char* what() const throw() override {
-            return "failure";
-        }
-    };
+
 public:
     DC(int id, int num_of_servers);
     ~DC();
@@ -48,6 +40,18 @@ public:
 
     friend bool operator ==(const DC&, const DC&);
     friend bool operator < (const DC&, const DC&);
+
+
+    class InvalidInput : public std::exception {
+        const char* what() const throw() override{
+            return "invalid input";
+        }
+    };
+    class Failure : public std::exception {
+        const char *what() const throw() override {
+            return "failure";
+        }
+    }
 };
 
 

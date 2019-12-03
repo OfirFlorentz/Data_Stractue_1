@@ -8,7 +8,6 @@
 #include <iostream>
 
 using std::cout;
-enum QueueResult {SUCCESS, FAILED};
 
 template <class T>
 struct Chain{
