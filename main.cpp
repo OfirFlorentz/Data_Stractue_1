@@ -35,6 +35,12 @@ int main(){
 
     cout << tree->getNumNodes() << endl;
 
+    DC** arr = tree->inorderArr();
+
+    for (int i = 0; i < tree->getNumNodes() ; ++i) {
+        cout << *arr[i] << " , ";
+    }
+
     delete(tree);
 
 

@@ -187,9 +187,7 @@ class AVLTree {
 
 
 
-        bool isLeaf(){
-            return right_child == NULL && left_child == NULL;
-        }
+        bool isLeaf();
 
         static int getHeight (TreeNode* node){
             if (node == NULL){
@@ -231,6 +229,8 @@ class AVLTree {
         }
 
         T* getData(T* target_data);
+
+        void fillInorderArr(int* i, T** arr);
     };
 
     TreeNode* root;
@@ -247,6 +247,7 @@ public:
     bool isExist(T* target_data);
     T* getData(T* target_data);
     void printTree();
+    T** inorderArr();
     };
 
 template<class T>
@@ -318,6 +319,17 @@ void AVLTree<T>::printTree() {
     }
 }
 
+template<class T>
+T **AVLTree<T>::inorderArr() {
+    if (num_nodes == 0){
+        return NULL;
+    }
+    T** inorderArr = new T*[num_nodes];
+    int index = 0;
+    root->fillInorderArr(&index,inorderArr);
+    return inorderArr;
+}
+
 
 
 // Node funcs
@@ -357,6 +369,23 @@ T *AVLTree<T>::TreeNode::getData(T *target_data) {
         } else {
             return NULL;
         }
+    }
+}
+
+template<class T>
+bool AVLTree<T>::TreeNode::isLeaf() {
+    return right_child == NULL && left_child == NULL;
+}
+
+template<class T>
+void AVLTree<T>::TreeNode::fillInorderArr(int *i, T **arr) {
+    if(left_child != NULL){
+        left_child->fillInorderArr(i,arr);
+    }
+    arr[*i] = data;
+    *i = *i + 1;
+    if(right_child != NULL){
+        right_child->fillInorderArr(i,arr);
     }
 }
 
