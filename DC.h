@@ -8,8 +8,9 @@
 #include <exception>
 #include <iostream>
 #include "Queue.h"
+#include "libary1.h"
 
-enum StatusType { INVALID_INPUT, FAILURE, SUCCESS};
+//enum StatusType { INVALID_INPUT, FAILURE, SUCCESS};
 enum OS {LINUX, WINDOWS};
 
 using namespace std;

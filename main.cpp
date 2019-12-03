@@ -1,66 +1,48 @@
 #include <iostream>
-#include "DCM.h"
+#include "Queue.h"
+#include "DC.h"
+#include "AVLTree.h"
+//#include "Node.cpp"
 
 using std::cout;
 using std::endl;
 
+int main(){
+    DC* a = new DC(1, 10);
+    DC* b = new DC(2, 12);
+    DC* new_b = new DC(2,12);
+    DC* c = new DC(3,12);
+    DC* d = new DC(4,16);
+    DC* e = new DC(5,16);
+    DC* f = new DC(6,7);
 
-int main() {
-    char *values[] = {"INVALID_INPUT", "FAILURE", "SUCCESS"};
+    AVLTree<DC>* tree = new AVLTree<DC>();
+    //insert shit
+    //tree->insertTreeNode(a);
 
-    /*
-    DC d(1, 10);
-    try {
-        cout << "num of windows " << d.numOfWindows() << endl;
-        cout << d.requestServer(3, 1) << endl;
-        cout << d.requestServer(0, 1) << en0dl;
-        d.freeServer(3);
-        d.freeServer(0);
-        cout << "num of windows " << d.numOfWindows() << endl;
-        cout << d.requestServer(0, 0) << endl;
-        cout << "num of windows " << d.numOfWindows() << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << d.requestServer(0, 1) << endl;
-        cout << "num of windows " << d.numOfWindows() << endl;
-        d.freeServer(8);
-        cout << d.requestServer(0, 1) << endl;
-        d.freeServer(55);
-        cout << d.requestServer(0, 1) << endl;
-    } catch (const std::exception& e) {
-        cout << e.what() << endl;
+    tree->insertTreeNode(e);
+    tree->insertTreeNode(a);
+    tree->insertTreeNode(b);
+    tree->insertTreeNode(c);
+    tree->insertTreeNode(d);
+    tree->insertTreeNode(f);
+
+
+    tree->removeTreeNode(new_b);
+
+    tree->printTree();
+    //tree->insertTreeNode(c);
+
+    cout << tree->getNumNodes() << endl;
+
+    DC** arr = tree->inorderArr();
+
+    for (int i = 0; i < tree->getNumNodes() ; ++i) {
+        cout << *arr[i] << ",";
     }
 
-    */
-    DCM dcm;
-    int x;
-    int* arr;
-    cout << values[dcm.addDataCenter(7, 2)] << endl;
-    cout << values[dcm.addDataCenter(8, 5)] << endl;
-    cout << values[dcm.addDataCenter(2, 4)] << endl;
-    cout << values[dcm.addDataCenter(1, 11)] << endl;
-    cout << values[dcm.addDataCenter(4, 3)] << endl;
-    dcm.GetDataCentersByOS(0, &arr, &x);
+    delete(tree);
 
-    for(int i = 0; i < x; i++)
-        cout << arr[i] << endl;
-    /*
-    cout << "remove " << values[dcm.removeDataCenter(8)] << endl;
-    cout << "remove " << values[dcm.removeDataCenter(8)] << endl;
-    cout << values[dcm.requestServer(8,0,1, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,0,1, &x)] << " x is: " << x <<  endl;
-    cout << "free" << values[dcm.freeServer(5,0)] << x <<  endl ;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-     */
+
     return 0;
 }

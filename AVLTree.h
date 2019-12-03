@@ -32,29 +32,19 @@ class AVLTree {
     public:
         explicit TreeNode(T* target_data);
         ~TreeNode();
+        bool isLeaf();
 
         TreeNode* getLeft() {
             return left_child;
         }
+
         TreeNode* getRight() {
             return right_child;
         }
+
         T& getData() {
             return *data;
         }
-/*
-        void setLeft(TreeNode* node){
-            this->left_child = node;
-        }
-        void setRight(TreeNode* node){
-            this->right_child = node;
-        }
-        void setHeight(int new_height){
-            this->height = new_height;
-        }
-*/
-
-
 
         TreeNode* llRotate(){
             TreeNode* node = this->left_child;
@@ -68,6 +58,7 @@ class AVLTree {
                             getHeight(node->right_child)) + 1;
             return node;
         }
+
         TreeNode* rrRotate(){
             TreeNode* node = this->right_child;
             this->right_child = this->right_child->left_child;
@@ -80,6 +71,7 @@ class AVLTree {
                             getHeight(node->right_child)) + 1;
             return node;
         }
+
         TreeNode* rlRotate(){
             this->right_child = this->right_child->llRotate();
             TreeNode* node = this->rrRotate();
@@ -88,6 +80,7 @@ class AVLTree {
                         getHeight(node->right_child)) + 1;
             return node;
         }
+
         TreeNode* lrRotate(){
             this->left_child = this->left_child->rrRotate();
             TreeNode* node = this->llRotate();
@@ -175,7 +168,6 @@ class AVLTree {
             return this->balanceTree();
         }
 
-
         TreeNode* getLeftest(){
             if (left_child==NULL){
                 return this;
@@ -183,11 +175,6 @@ class AVLTree {
                 return left_child->getLeftest();
             }
         }
-
-
-
-
-        bool isLeaf();
 
         static int getHeight (TreeNode* node){
             if (node == NULL){

@@ -17,7 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "library1.h"
+#include "libary1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -125,7 +125,7 @@ static errorType OnAddDataCenter(void* DS, const char* const command);
 static errorType OnRemoveDataCenter(void* DS, const char* const command);
 static errorType OnRequestServer(void* DS, const char* const command);
 static errorType OnFreeServer(void* DS, const char* const command);
-static errorType OnGetDataCentersByOS(void* DS, const char* const command);
+//static errorType OnGetDataCentersByOS(void* DS, const char* const command);
 static errorType OnQuit(void** DS, const char* const command);
 
 /***************************************************************************/
@@ -157,7 +157,7 @@ static errorType parser(const char* const command) {
             rtn_val = OnFreeServer(DS, command_args);
             break;
         case (GETDATACENTERSBYOS_CMD):
-            rtn_val = OnGetDataCentersByOS(DS, command_args);
+            //rtn_val = OnGetDataCentersByOS(DS, command_args);
             break;
         case (QUIT_CMD):
             rtn_val = OnQuit(&DS, command_args);
