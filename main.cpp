@@ -1,29 +1,38 @@
-#include "AVLTree.h"
-int main(int argc, const char**argv) {
-    AVLTree<char> *tree;
-    tree = new AVLTree<char>;
-    char* c = new char('c');
-    tree->insertTreeNode(c);
-    char* d = new char('d');
-    tree->insertTreeNode(d);
-/*
-    char* a = new char('d');
-    tree->insertTreeNode(a);
-*/
-    char* f = new char('f');
-    tree->insertTreeNode(f);
-    char* g = new char('g');
-    tree->insertTreeNode(g);
-    char* j = new char('j');
-    tree->insertTreeNode(j);
-    char* k = new char('k');
-    tree->insertTreeNode(k);
-    char* l = new char('l');
-    tree->insertTreeNode(l);
-    char* m = new char('m');
-    tree->insertTreeNode(m);
-    tree->printTree();
-    delete tree;
+#include <iostream>
+#include "Queue.h"
+#include "DC.h"
+//#include "Node.cpp"
 
+using std::cout;
+using std::endl;
+
+int main(){
+    DC d(1, 10);
+    try {
+        cout << "num of windows " << d.numOfWindows() << endl;
+        cout << d.requestServer(3, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        d.freeServer(3);
+        d.freeServer(0);
+        cout << "num of windows " << d.numOfWindows() << endl;
+        cout << d.requestServer(0, 0) << endl;
+        cout << "num of windows " << d.numOfWindows() << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << d.requestServer(0, 1) << endl;
+        cout << "num of windows " << d.numOfWindows() << endl;
+        d.freeServer(8);
+        cout << d.requestServer(0, 1) << endl;
+        d.freeServer(55);
+        cout << d.requestServer(0, 1) << endl;
+    } catch (const std::exception& e) {
+        cout << e.what() << endl;
+    }
     return 0;
 }

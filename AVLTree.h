@@ -19,9 +19,6 @@ enum AVLStatus {
 template <class T>
 class AVLTree {
 
-
-
-
     class TreeNode{
         T* data;
         int height;
