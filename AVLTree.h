@@ -339,5 +339,11 @@ T *AVLTree<T>::getData(T *target_data) {
     return root->getData(target_data);
 }
 
+template<class T>
+void AVLTree<T>::printTree() {
+    if (root != NULL){
+        root->inorderOutput();
+    }
+}
 
 #endif //HW1_WET_AVLTREE_H
