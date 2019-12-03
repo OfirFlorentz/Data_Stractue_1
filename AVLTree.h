@@ -11,13 +11,17 @@ using namespace std;
 
 
 enum AVLStatus {
-    AVL_SUCESS,
+    AVL_SUCCESS,
     AVL_OUT_OF_MEMORY,
-    AVL_NULL_POINTER
+    AVL_NULL_POINTER,
+    NODE_NOT_EXIST
 };
 
 template <class T>
 class AVLTree {
+
+
+
 
     class TreeNode{
         T* data;
@@ -25,7 +29,7 @@ class AVLTree {
         TreeNode* left_child;
         TreeNode* right_child;
     public:
-        TreeNode(T* target_data){
+        explicit TreeNode(T* target_data){
             data = target_data;
             height = 0;
             left_child = NULL;
@@ -63,30 +67,43 @@ class AVLTree {
 
 
         TreeNode* llRotate(){
-            std::cout << "llRotate" << std::endl;
             TreeNode* node = this->left_child;
             this->left_child = this->left_child->right_child;
             node->right_child = this;
+            node->right_child->height =
+                    max(getHeight(node->right_child->left_child),
+                            getHeight(node->right_child->right_child)) + 1;
+            node->height =
+                    max(getHeight(node->left_child),
+                            getHeight(node->right_child)) + 1;
             return node;
         }
         TreeNode* rrRotate(){
-            std::cout << "rrRotate" << std::endl;
-            std::cout << this->height << std::endl;
             TreeNode* node = this->right_child;
             this->right_child = this->right_child->left_child;
             node->left_child = this;
+            node->left_child->height =
+                    max(getHeight(node->left_child->left_child),
+                            getHeight(node->left_child->right_child)) + 1;
+            node->height =
+                    max(getHeight(node->left_child),
+                            getHeight(node->right_child)) + 1;
             return node;
         }
         TreeNode* rlRotate(){
-            std::cout << "rlRotate" << std::endl;
             this->right_child = this->right_child->llRotate();
             TreeNode* node = this->rrRotate();
+            node->height =
+                    max(getHeight(node->left_child),
+                        getHeight(node->right_child)) + 1;
             return node;
         }
         TreeNode* lrRotate(){
-            std::cout << "lrRotate" << std::endl;
             this->left_child = this->left_child->rrRotate();
             TreeNode* node = this->llRotate();
+            node->height =
+                    max(getHeight(node->left_child),
+                        getHeight(node->right_child)) + 1;
             return node;
         }
 
@@ -117,7 +134,7 @@ class AVLTree {
                     return this->balanceTree();
                 } else {
                     right_child = new_node;
-                    return this;
+                    return this->balanceTree();
                 }
             } else if (*new_data < *data){
                 if (left_child != NULL){
@@ -125,14 +142,105 @@ class AVLTree {
                     return this->balanceTree();
                 } else {
                     left_child = new_node;
-                    return this;
+                    return this->balanceTree();
                 }
             } else if (*new_data == *data){
                 delete this->data;
                 this->data = new_data;
                 return this;
             }
+        }
 
+ /*       AVLStatus removeTreeNode(T* target_data){
+            if (getData(target_data) == NULL){
+                return NODE_NOT_EXIST;
+            } else {
+                if (*data == *target_data){
+                    if (left_child == NULL && right_child == NULL){
+                        //delete this;
+                    } else if (right_child == NULL && left_child != NULL){
+                        data = left_child->data;
+                        height = left_child->height;
+                        right_child = left_child->right_child;
+                        left_child = left_child->left_child;
+                    } else if (left_child == NULL && right_child != NULL){
+                        data = right_child->data;
+                        height = right_child->height;
+                        right_child = right_child->right_child;
+                        left_child = right_child->left_child;
+                    } else if (left_child != NULL && right_child != NULL){
+                        TreeNode* next_left = right_child->getLeftest();
+                        T* next_left_data = next_left->data;
+                        next_left->data = this->data;
+                        this->data = next_left_data;
+                        return right_child->removeTreeNode(target_data);
+                    }
+                } else if (*data > *target_data){
+                    if (left_child != NULL){
+                        return left_child->removeTreeNode(target_data);
+                    }
+                } else if (*data < *target_data){
+                    if (right_child != NULL){
+                        return right_child->removeTreeNode(target_data);
+                    }
+                }
+                //this = this->balanceTree();
+            }
+            return AVL_SUCCESS;
+        }*/
+
+
+        TreeNode* removeTreeNode(T* target_data){
+            if (getData(target_data) == NULL){
+                return this;
+            } else {
+                if (*data == *target_data){
+                    if (left_child == NULL && right_child == NULL){
+                        return NULL;
+                    } else if (right_child == NULL && left_child != NULL){
+                        data = left_child->data;
+                        height = left_child->height;
+                        right_child = left_child->right_child;
+                        left_child = left_child->left_child;
+                    } else if (left_child == NULL && right_child != NULL){
+                        data = right_child->data;
+                        height = right_child->height;
+                        left_child = right_child->left_child;
+                        right_child = right_child->right_child;
+                    } else if (left_child != NULL && right_child != NULL){
+                        TreeNode* next_left = right_child->getLeftest();
+                        T* next_left_data = next_left->data;
+                        next_left->data = this->data;
+                        data = next_left_data;
+                        right_child = right_child->removeTreeNode(target_data);
+                    }
+                } else if (*data > *target_data){
+                    if (left_child != NULL){
+                        left_child = left_child->removeTreeNode(target_data);
+                    }
+                } else if (*data < *target_data){
+                    if (right_child != NULL){
+                        right_child = right_child->removeTreeNode(target_data);
+                    }
+                }
+                return this->balanceTree();
+            }
+        }
+
+
+        TreeNode* getLeftest(){
+            if (left_child==NULL){
+                return this;
+            } else {
+                return left_child->getLeftest();
+            }
+        }
+
+
+
+
+        bool isLeaf(){
+            return right_child == NULL && left_child == NULL;
         }
 
         static int getHeight (TreeNode* node){
@@ -162,15 +270,33 @@ class AVLTree {
             if (data != NULL){
                 std::cout << *data << "-" << getHeight() << "-";
                 if (left_child != NULL){
-                    std::cout << left_child->getData() << "-";
+                    std::cout << "L:" << left_child->getData() << "-";
                 }
                 if (right_child != NULL){
-                    std::cout << right_child->getData();
+                    std::cout << "R:" << right_child->getData();
                 }
                 std::cout << std::endl;
             }
             if (right_child != NULL){
                 right_child->inorderOutput();
+            }
+        }
+
+        T* getData(T* target_data){
+            if (*data == *target_data){
+                return data;
+            } else if (*data > *target_data){
+                if (left_child != NULL){
+                    return left_child->getData(data);
+                } else {
+                    return NULL;
+                }
+            } else if (*data > *target_data){
+                if (right_child != NULL){
+                    return right_child->getData(data);
+                } else {
+                    return NULL;
+                }
             }
         }
     };
@@ -204,6 +330,16 @@ public:
             root = new TreeNode(data);
         } else {
             root = root->insertNode(data);
+        }
+        return AVL_SUCCESS;
+    }
+
+    AVLStatus removeTreeNode(T* data){
+        if (root == NULL){
+            return NODE_NOT_EXIST;
+        } else {
+            root = root->removeTreeNode(data);
+            return AVL_SUCCESS;
         }
     }
 

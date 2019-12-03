@@ -6,7 +6,7 @@
 #define HW1_WET_NODE_H
 
 #include <iostream>
-#include "Avl.h"
+#include "AVLTree.h"
 
 class ValueNode;
 class DCNode;

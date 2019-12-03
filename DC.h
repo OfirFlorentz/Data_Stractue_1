@@ -51,7 +51,7 @@ public:
         const char *what() const throw() override {
             return "failure";
         }
-    }
+    };
 };
 
 
