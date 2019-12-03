@@ -8,7 +8,7 @@
 #include <exception>
 #include <iostream>
 #include "Queue.h"
-#include "libary1.h"
+#include "library1.h"
 
 //enum StatusType { INVALID_INPUT, FAILURE, SUCCESS};
 enum OS {LINUX, WINDOWS};

@@ -2,7 +2,7 @@
 // Created by ofir on 24/11/2019.
 //
 
-#include "libary1.h"
+#include "library1.h"
 #include "DCM.h"
 
 void * Init(){
@@ -24,6 +24,10 @@ StatusType RequestServer(void *DS, int dataCenterID, int serverID, int os, int *
 
 StatusType FreeServer(void *DS, int dataCenterID, int serverID){
     return ((DCM *) DS)-> freeServer(dataCenterID,serverID);
+}
+
+StatusType GetDataCentersByOS(void *DS, int os, int **dataCenters, int* numOfDataCenters){
+    return ((DCM *) DS)->GetDataCentersByOS(os,dataCenters,numOfDataCenters);
 }
 
 void Quit(void **DS) {
