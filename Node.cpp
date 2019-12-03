@@ -12,7 +12,19 @@ bool operator > (const DCNode &first, const DCNode &second) {
     return (first.id>second.id);
 }
 
+bool operator > ( DCNode &first,  DCNode &second) {
+    if(first.value > second.value)
+        return true;
+    else if(first.value < second.value)
+        return false;
+    return (first.id>second.id);
+}
+
 bool operator < (const DCNode &first, const DCNode &second) {
+    return (!(first>second) && !(first==second));
+}
+
+bool operator < (DCNode &first, DCNode &second) {
     return (!(first>second) && !(first==second));
 }
 
@@ -21,11 +33,23 @@ bool operator <= (const DCNode &first, const DCNode &second) {
     return (first<second) || (first==second);
 }
 
+bool operator <= (DCNode &first, DCNode &second) {
+    return (first<second) || (first==second);
+}
+
 bool operator >= (const DCNode &first, const DCNode &second) {
     return (first>second) || (first==second);
 }
 
+bool operator >= (DCNode &first, DCNode &second) {
+    return (first>second) || (first==second);
+}
+
 bool  operator == (const DCNode &first, const DCNode &second) {
+    return (first.id == second.id);
+}
+
+bool  operator == (DCNode &first, DCNode &second) {
     return (first.id == second.id);
 }
 

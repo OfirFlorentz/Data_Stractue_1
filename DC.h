@@ -38,6 +38,7 @@ public:
     int requestServer(int server_id, bool os);
     int numOfWindows() const;
     int numOfLinux() const;
+    int numOfServers() const;
 
     friend bool operator ==(const DC&, const DC&);
     friend bool operator ==(DC&, DC&);

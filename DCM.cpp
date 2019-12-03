@@ -9,11 +9,11 @@ StatusType DCM::addDataCenter(int id, int num_of_servers) {
     if (num_of_servers <= 0 || id <= 0)
         return INVALID_INPUT;
     DC* new_dc = new DC(id, num_of_servers);
-    AVLStatus t = dc_tree.insertTreeNode(new_dc);
-    if (t == 'EXIST') {
+    if(dc_tree.isExist(new_dc)) {
         delete new_dc;
         return FAILURE;
     }
+    dc_tree.insertTreeNode(new_dc);
     DCNode* new_windows = new DCNode(id , 0);
     DCNode* new_linux = new DCNode(id, num_of_servers);
     windows_tree.insertTreeNode(new_windows);
@@ -40,9 +40,9 @@ StatusType DCM::requestServer(int dc_id, int server_id, int os, int* assigned_id
         return INVALID_INPUT;
     DC temp(dc_id,1);
     DC* dc = dc_tree.getData(&temp);//num of servers is not importent for compering
-    if(dc == nullptr)
+    if(dc == NULL)
         return FAILURE;
-    if (dc->numOfLinux() <= server_id )
+    if (dc->numOfServers() <= server_id )
         return INVALID_INPUT;
     try {
         int windows_server = dc->numOfWindows();
@@ -50,7 +50,7 @@ StatusType DCM::requestServer(int dc_id, int server_id, int os, int* assigned_id
         *assigned_id = server;
         // os changed
         if(windows_server != dc->numOfWindows())
-            updateServers(server_id, dc->numOfWindows(), dc->requestServer() - dc->numOfWindows())
+            updateServers(server_id, dc->numOfWindows(), dc->numOfLinux());
     }
     catch(const DC::Failure& e) {
         return FAILURE;
@@ -59,6 +59,7 @@ StatusType DCM::requestServer(int dc_id, int server_id, int os, int* assigned_id
         cout << "somthingworng " <<  e.what();
         return FAILURE;
     }
+    return SUCCESS;
 }
 
 
@@ -71,14 +72,14 @@ void DCM::updateServers(int server_id, int num_of_windows, int num_of_linux) {
     linux_tree.insertTreeNode(new_linux);
 }
 
-StatusType DCM::FreeServer(int dc_id, int server_id) {
+StatusType DCM::freeServer(int dc_id, int server_id) {
     if (dc_id <= 0 || server_id < 0)
         return INVALID_INPUT;
     DC temp(dc_id,1);
     DC* dc = dc_tree.getData(&temp);//num of servers is not importent for compering
-    if(dc == nullptr)
+    if(dc == NULL)
         return FAILURE;
-    if (dc->numOfLinux() <= server_id )
+    if (dc->numOfServers() <= server_id )
         return INVALID_INPUT;
     try {
         dc->freeServer(server_id);
@@ -89,5 +90,6 @@ StatusType DCM::FreeServer(int dc_id, int server_id) {
         cout << "somthingworng " <<  e.what();
         return FAILURE;
     }
+    return SUCCESS;
 }
 

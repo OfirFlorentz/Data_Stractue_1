@@ -12,8 +12,8 @@
 
 class DCM {
     AVLTree<DC> dc_tree;
-    AVLTree<DC> linux_tree;
-    AVLTree<DC> windows_tree;
+    AVLTree<DCNode> linux_tree;
+    AVLTree<DCNode> windows_tree;
 
     void updateServers(int server_id, int num_of_windows, int num_of_linux);
 
@@ -21,7 +21,7 @@ public:
     StatusType addDataCenter(int id, int num_of_servers);
     StatusType removeDataCenter(int id);
     StatusType requestServer(int dc_id, int server_id, int os, int* assigned_id);
-    StatusType FreeServer(int dc_id, int server_id);
+    StatusType freeServer(int dc_id, int server_id);
 };
 
 

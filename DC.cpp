@@ -117,6 +117,10 @@ ostream &operator<<(ostream &os, const DC &dc) {
     return os << dc.id;
 }
 
+int DC::numOfServers() const {
+    return num_of_servers;
+}
+
 
 bool operator>(const DC & first, const DC & second) {
     return (!(first < second) && !(first==second));

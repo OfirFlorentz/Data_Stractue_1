@@ -10,11 +10,17 @@
 using std::cout;
 
 template <class T>
-struct Chain{
+class Chain{
+public:
     T value;
-    Chain* next;
-    Chain* prev;
+    Chain<T>* next;
+    Chain<T>* prev;
+    explicit Chain(const T& value) : value(value){
+        next = nullptr;
+        prev = nullptr;
+    }
 };
+
 
 template <class T>
 class Queue {
@@ -77,7 +83,7 @@ void Queue<T>:: dequeue() {
 
 template <class T>
 Chain<T>* Queue<T>:: enqueue(const T element){
-    Chain<T>* new_chain = new Chain<T>;
+    Chain<T>* new_chain = new Chain<T>(element);
     new_chain->next= nullptr;
     new_chain->prev = last;
     new_chain->value = element;

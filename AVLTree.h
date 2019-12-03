@@ -304,11 +304,15 @@ AVLStatus AVLTree<T>::removeTreeNode(T *data) {
 
 template<class T>
 bool AVLTree<T>::isExist(T *target_data) {
+    if(root == NULL)
+        return false;
     return root->getData(target_data) != NULL;
 }
 
 template<class T>
 T *AVLTree<T>::getData(T *target_data) {
+    if(root == NULL)
+        return NULL;
     return root->getData(target_data);
 }
 
