@@ -15,7 +15,7 @@ int main(){
 
     AVLTree<DC>* tree = new AVLTree<DC>();
     //insert shit
-    tree->insertTreeNode(a);
+    //tree->insertTreeNode(a);
 
     tree->printTree();
     //tree->insertTreeNode(d);

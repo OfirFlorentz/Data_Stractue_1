@@ -14,7 +14,8 @@ enum AVLStatus {
     AVL_SUCCESS,
     AVL_OUT_OF_MEMORY,
     AVL_NULL_POINTER,
-    NODE_NOT_EXIST
+    NODE_NOT_EXIST,
+    NODE_ALREADY_EXIST
 };
 
 template <class T>
@@ -151,45 +152,6 @@ class AVLTree {
             }
         }
 
- /*       AVLStatus removeTreeNode(T* target_data){
-            if (getData(target_data) == NULL){
-                return NODE_NOT_EXIST;
-            } else {
-                if (*data == *target_data){
-                    if (left_child == NULL && right_child == NULL){
-                        //delete this;
-                    } else if (right_child == NULL && left_child != NULL){
-                        data = left_child->data;
-                        height = left_child->height;
-                        right_child = left_child->right_child;
-                        left_child = left_child->left_child;
-                    } else if (left_child == NULL && right_child != NULL){
-                        data = right_child->data;
-                        height = right_child->height;
-                        right_child = right_child->right_child;
-                        left_child = right_child->left_child;
-                    } else if (left_child != NULL && right_child != NULL){
-                        TreeNode* next_left = right_child->getLeftest();
-                        T* next_left_data = next_left->data;
-                        next_left->data = this->data;
-                        this->data = next_left_data;
-                        return right_child->removeTreeNode(target_data);
-                    }
-                } else if (*data > *target_data){
-                    if (left_child != NULL){
-                        return left_child->removeTreeNode(target_data);
-                    }
-                } else if (*data < *target_data){
-                    if (right_child != NULL){
-                        return right_child->removeTreeNode(target_data);
-                    }
-                }
-                //this = this->balanceTree();
-            }
-            return AVL_SUCCESS;
-        }*/
-
-
         TreeNode* removeTreeNode(T* target_data){
             if (getData(target_data) == NULL){
                 return this;
@@ -309,47 +271,73 @@ public:
 
 
 
-    AVLTree(){
-        root = nullptr;
-        num_nodes = 0;
-    }
-    ~AVLTree(){
-        delete root;
-    };
+    AVLTree();
+    ~AVLTree();
     AVLTree(const AVLTree &tree) = default;
 
-    int getNumNodes(){
-        return num_nodes;
-    }
 
-    AVLStatus insertTreeNode(T* data){
-        if (data == NULL){
-            return AVL_NULL_POINTER;
-        }
-        if (root == NULL){
-            root = new TreeNode(data);
-        } else {
-            root = root->insertNode(data);
-        }
-        return AVL_SUCCESS;
-    }
+    int getNumNodes();
 
-    AVLStatus removeTreeNode(T* data){
-        if (root == NULL){
-            return NODE_NOT_EXIST;
-        } else {
-            root = root->removeTreeNode(data);
-            return AVL_SUCCESS;
-        }
-    }
+    AVLStatus insertTreeNode(T* data);
 
-    void printTree(){
-        if (root != NULL){
-            root->inorderOutput();
-        }
-    }
+    AVLStatus removeTreeNode(T* data);
+
+    bool isExist(T* target_data);
+
+    T* getData(T* target_data);
+
+    void printTree();
 
     };
+
+template<class T>
+AVLTree<T>::AVLTree() {
+    root = nullptr;
+    num_nodes = 0;
+}
+
+template<class T>
+AVLTree<T>::~AVLTree() {
+    delete root;
+}
+
+template<class T>
+int AVLTree<T>::getNumNodes() {
+    return num_nodes;
+}
+
+template<class T>
+AVLStatus AVLTree<T>::insertTreeNode(T *data) {
+    if (data == NULL){
+        return AVL_NULL_POINTER;
+    }
+    if (root == NULL){
+        root = new TreeNode(data);
+    } else {
+        root = root->insertNode(data);
+    }
+    return AVL_SUCCESS;
+}
+
+template<class T>
+AVLStatus AVLTree<T>::removeTreeNode(T *data) {
+    if (root == NULL){
+        return NODE_NOT_EXIST;
+    } else {
+        root = root->removeTreeNode(data);
+        return AVL_SUCCESS;
+    }
+}
+
+template<class T>
+bool AVLTree<T>::isExist(T *target_data) {
+    return root->getData(target_data) != NULL;
+}
+
+template<class T>
+T *AVLTree<T>::getData(T *target_data) {
+    return root->getData(target_data);
+}
 
 
 #endif //HW1_WET_AVLTREE_H
