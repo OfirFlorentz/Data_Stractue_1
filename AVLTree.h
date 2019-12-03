@@ -140,40 +140,37 @@ class AVLTree {
         }
 
         TreeNode* removeTreeNode(T* target_data){
-            if (getData(target_data) == NULL){
-                return this;
-            } else {
-                if (*data == *target_data){
-                    if (left_child == NULL && right_child == NULL){
-                        return NULL;
-                    } else if (right_child == NULL && left_child != NULL){
-                        data = left_child->data;
-                        height = left_child->height;
-                        right_child = left_child->right_child;
-                        left_child = left_child->left_child;
-                    } else if (left_child == NULL && right_child != NULL){
-                        data = right_child->data;
-                        height = right_child->height;
-                        left_child = right_child->left_child;
-                        right_child = right_child->right_child;
-                    } else if (left_child != NULL && right_child != NULL){
-                        TreeNode* next_left = right_child->getLeftest();
-                        T* next_left_data = next_left->data;
-                        next_left->data = this->data;
-                        data = next_left_data;
-                        right_child = right_child->removeTreeNode(target_data);
-                    }
-                } else if ( *target_data < *data){
-                    if (left_child != NULL){
-                        left_child = left_child->removeTreeNode(target_data);
-                    }
-                } else if (*data < *target_data){
-                    if (right_child != NULL){
-                        right_child = right_child->removeTreeNode(target_data);
-                    }
+            if (*data == *target_data){
+                if (left_child == NULL && right_child == NULL){
+                    delete this;
+                    return NULL;
+                } else if (right_child == NULL && left_child != NULL){
+                    data = left_child->data;
+                    height = left_child->height;
+                    right_child = left_child->right_child;
+                    left_child = left_child->left_child;
+                } else if (left_child == NULL && right_child != NULL){
+                    data = right_child->data;
+                    height = right_child->height;
+                    left_child = right_child->left_child;
+                    right_child = right_child->right_child;
+                } else if (left_child != NULL && right_child != NULL){
+                    TreeNode* next_left = right_child->getLeftest();
+                    T* next_left_data = next_left->data;
+                    next_left->data = this->data;
+                    data = next_left_data;
+                    right_child = right_child->removeTreeNode(target_data);
                 }
-                return this->balanceTree();
+            } else if ( *target_data < *data){
+                if (left_child != NULL){
+                    left_child = left_child->removeTreeNode(target_data);
+                }
+            } else if (*data < *target_data){
+                if (right_child != NULL){
+                    right_child = right_child->removeTreeNode(target_data);
+                }
             }
+            return this->balanceTree();
         }
 
 
@@ -236,13 +233,13 @@ class AVLTree {
                 return data;
             } else if (*target_data < *data){
                 if (left_child != NULL){
-                    return left_child->getData(data);
+                    return left_child->getData(target_data);
                 } else {
                     return NULL;
                 }
             } else if (*data < *target_data){
                 if (right_child != NULL){
-                    return right_child->getData(data);
+                    return right_child->getData(target_data);
                 } else {
                     return NULL;
                 }
