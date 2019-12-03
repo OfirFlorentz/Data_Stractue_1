@@ -12,13 +12,22 @@ int main(){
     DC* b = new DC(2, 12);
     DC* c = new DC(3,12);
     DC* d = new DC(4,16);
+    DC* e = new DC(5,16);
+    DC* f = new DC(6,7);
 
     AVLTree<DC>* tree = new AVLTree<DC>();
     //insert shit
     //tree->insertTreeNode(a);
 
     tree->printTree();
-    //tree->insertTreeNode(d);
+    tree->insertTreeNode(e);
+    tree->insertTreeNode(a);
+    tree->insertTreeNode(b);
+    tree->insertTreeNode(c);
+    tree->insertTreeNode(d);
+    tree->insertTreeNode(f);
+
+    tree->printTree();
     //tree->insertTreeNode(c);
 
     delete(tree);

@@ -30,21 +30,8 @@ class AVLTree {
         TreeNode* left_child;
         TreeNode* right_child;
     public:
-        explicit TreeNode(T* target_data){
-            data = target_data;
-            height = 0;
-            left_child = NULL;
-            right_child = NULL;
-        }
-        ~TreeNode(){
-            delete data;
-            if (left_child != NULL){
-                delete left_child;
-            }
-            if (right_child != NULL){
-                delete right_child;
-            }
-        }
+        explicit TreeNode(T* target_data);
+        ~TreeNode();
 
         TreeNode* getLeft() {
             return left_child;
@@ -129,7 +116,7 @@ class AVLTree {
 
         TreeNode* insertNode(T* new_data){
             TreeNode* new_node = new TreeNode(new_data);
-            if (*new_data > *data) {
+            if ( *data < *new_data) {
                 if (right_child != NULL) {
                     right_child = right_child->insertNode(new_data);
                     return this->balanceTree();
@@ -176,7 +163,7 @@ class AVLTree {
                         data = next_left_data;
                         right_child = right_child->removeTreeNode(target_data);
                     }
-                } else if (*data > *target_data){
+                } else if ( *target_data < *data){
                     if (left_child != NULL){
                         left_child = left_child->removeTreeNode(target_data);
                     }
@@ -247,13 +234,13 @@ class AVLTree {
         T* getData(T* target_data){
             if (*data == *target_data){
                 return data;
-            } else if (*data > *target_data){
+            } else if (*target_data < *data){
                 if (left_child != NULL){
                     return left_child->getData(data);
                 } else {
                     return NULL;
                 }
-            } else if (*data > *target_data){
+            } else if (*data < *target_data){
                 if (right_child != NULL){
                     return right_child->getData(data);
                 } else {
@@ -268,26 +255,15 @@ class AVLTree {
 
 
 public:
-
-
-
     AVLTree();
     ~AVLTree();
     AVLTree(const AVLTree &tree) = default;
-
-
     int getNumNodes();
-
     AVLStatus insertTreeNode(T* data);
-
     AVLStatus removeTreeNode(T* data);
-
     bool isExist(T* target_data);
-
     T* getData(T* target_data);
-
     void printTree();
-
     };
 
 template<class T>
@@ -343,6 +319,29 @@ template<class T>
 void AVLTree<T>::printTree() {
     if (root != NULL){
         root->inorderOutput();
+    }
+}
+
+
+
+// Node funcs
+
+template<class T>
+AVLTree<T>::TreeNode::TreeNode(T *target_data) {
+    data = target_data;
+    height = 0;
+    left_child = NULL;
+    right_child = NULL;
+}
+
+template<class T>
+AVLTree<T>::TreeNode::~TreeNode() {
+    delete data;
+    if (left_child != NULL){
+        delete left_child;
+    }
+    if (right_child != NULL){
+        delete right_child;
     }
 }
 
