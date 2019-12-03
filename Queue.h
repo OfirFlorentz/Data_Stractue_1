@@ -120,9 +120,7 @@ void Queue<T>::dequeueByValue(Chain<T>* chain) {
     if(chain == nullptr)
         throw Nullptr();
     if (first == chain) {
-        first = first->next;
-        first->prev = nullptr;
-        delete chain;
+        dequeue();
     } else if (last == chain) {
         last = chain->prev;
         last->next = nullptr;

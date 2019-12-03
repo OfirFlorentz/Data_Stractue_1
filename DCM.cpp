@@ -48,11 +48,12 @@ StatusType DCM::requestServer(int dc_id, int server_id, int os, int* assigned_id
         return INVALID_INPUT;
     try {
         int windows_server = dc->numOfWindows();
+        int linux_server = dc->numOfLinux();
         int server = dc->requestServer(server_id, os);
         *assigned_id = server;
         // os changed
         if(windows_server != dc->numOfWindows())
-            updateServers(server_id, dc->numOfWindows(), dc->numOfLinux());
+            updateServers(dc_id, dc->numOfWindows(), dc->numOfLinux(), windows_server, linux_server);
     }
     catch(const DC::Failure& e) {
         return FAILURE;
@@ -65,11 +66,15 @@ StatusType DCM::requestServer(int dc_id, int server_id, int os, int* assigned_id
 }
 
 
-void DCM::updateServers(int server_id, int num_of_windows, int num_of_linux) {
-    DCNode* new_windows = new DCNode(server_id , num_of_windows);
-    DCNode* new_linux = new DCNode(server_id, num_of_linux);
+void DCM::updateServers(int server_id, int num_of_windows, int num_of_linux, int prev_wind, int prev_lin) {
+    DCNode* new_windows = new DCNode(server_id , prev_wind);
+    DCNode* new_linux = new DCNode(server_id, prev_lin);
     windows_tree.removeTreeNode(new_windows);
     linux_tree.removeTreeNode(new_windows);
+    delete new_windows;
+    delete new_linux;
+    new_windows = new DCNode(server_id , num_of_windows);
+    new_linux = new DCNode(server_id, num_of_linux);
     windows_tree.insertTreeNode(new_windows);
     linux_tree.insertTreeNode(new_linux);
 }
@@ -109,8 +114,6 @@ StatusType DCM::GetDataCentersByOS(int os, int **dataCenters, int *numOfDataCent
     for(int i = servers_counter-1; i>=0; i--) {
 
         (*dataCenters)[j++] = in_order_elements[i]->getId();
-        //cout << in_order_elements[i]->getId() << endl;
-
     }
 }
 

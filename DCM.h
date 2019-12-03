@@ -15,7 +15,7 @@ class DCM {
     AVLTree<DCNode> linux_tree;
     AVLTree<DCNode> windows_tree;
     int servers_counter;
-    void updateServers(int server_id, int num_of_windows, int num_of_linux);
+    void updateServers(int server_id, int num_of_windows, int num_of_linux, int prev_wind, int prev_lin);
 
 public:
     DCM():dc_tree(), linux_tree(), windows_tree(), servers_counter(0){};
@@ -24,7 +24,6 @@ public:
     StatusType requestServer(int dc_id, int server_id, int os, int* assigned_id);
     StatusType freeServer(int dc_id, int server_id);
     StatusType GetDataCentersByOS(int os, int **dataCenters, int* numOfDataCenters);
-
 };
 
 
