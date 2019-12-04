@@ -40,7 +40,8 @@ int main() {
     }
 
     */
-    DCM dcm;
+    DCM* ptr = new DCM;
+    DCM& dcm = *ptr;
     int x;
     int* arr;
     cout << values[dcm.addDataCenter(7, 2)] << endl;
@@ -70,5 +71,6 @@ int main() {
     cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
     cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
      */
+    delete ptr;
     return 0;
 }

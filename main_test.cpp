@@ -38,9 +38,10 @@ int main() {
     }
 
     */
-    DCM dcm;
+    DCM* dcm_ptr = new DCM;
     int x;
     int* arr;
+    DCM& dcm = *dcm_ptr;
     cout << values[dcm.addDataCenter(7, 1)] << endl;
     cout << values[dcm.addDataCenter(8, 2)] << endl;
     cout << values[dcm.addDataCenter(9, 1)] << endl;
