@@ -8,38 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug"/>
+				<Option working_dir="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug"/>
+				<Option working_dir="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hw1_wet">
-				<Option output="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/hw1_wet" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/hw1_wet" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -54,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw1_wet"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw1_wet"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="hw1_wet/fast">
-				<Option output="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/hw1_wet" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug"/>
+				<Option output="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/hw1_wet" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -77,44 +67,54 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw1_wet/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 hw1_wet/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/DC.cpp">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DC.cpp">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/DC.h">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DC.h">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/DCM.cpp">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DCM.cpp">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/DCM.h">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/DCM.h">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Node.cpp">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/Node.cpp">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Node.h">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/Node.h">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/Queue.h">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/Queue.h">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/library1.cpp">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/library1.cpp">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/library1.h">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/library1.h">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/main_temp.cpp">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/main.cpp">
 			<Option target="hw1_wet"/>
 		</Unit>
-		<Unit filename="/mnt/c/Users/ofir/Desktop/courses/20-winter/data_stracture/hw1_wet/CMakeLists.txt">
+		<Unit filename="/mnt/c/Users/Nathan/CLionProjects/Data_Stractue_1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -34,13 +34,6 @@ class AVLTree {
         ~TreeNode();
         bool isLeaf();
 
-        void destroyTree(int* i){
-            for (int j = 0; j < *i ; ++j) {
-                this->removeTreeNode(right_child->data);
-                this->removeTreeNode(left_child->data);
-            }
-        }
-
         TreeNode* getLeft() {
             return left_child;
         }
@@ -151,12 +144,16 @@ class AVLTree {
                     data = left_child->data;
                     height = left_child->height;
                     right_child = left_child->right_child;
+                    TreeNode* temp = left_child;
                     left_child = left_child->left_child;
+                    delete temp;
                 } else if (left_child == nullptr && right_child != nullptr){
                     data = right_child->data;
                     height = right_child->height;
                     left_child = right_child->left_child;
+                    TreeNode* temp = right_child;
                     right_child = right_child->right_child;
+                    delete temp;
                 } else if (left_child != nullptr && right_child != nullptr){
                     TreeNode* next_left = right_child->getLeftest();
                     T* next_left_data = next_left->data;
