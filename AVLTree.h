@@ -141,15 +141,17 @@ class AVLTree {
                     delete this;
                     return nullptr;
                 } else if (right_child == nullptr && left_child != nullptr){
-                    data = left_child->data;
-                    height = left_child->height;
-                    right_child = left_child->right_child;
-                    left_child = left_child->left_child;
+                    TreeNode* next_right = left_child->getRightest();
+                    T* next_right_data = next_right->data;
+                    next_right->data = this->data;
+                    data = next_right_data;
+                    left_child = left_child->removeTreeNode(target_data);
                 } else if (left_child == nullptr && right_child != nullptr){
-                    data = right_child->data;
-                    height = right_child->height;
-                    left_child = right_child->left_child;
-                    right_child = right_child->right_child;
+                    TreeNode* next_left = right_child->getLeftest();
+                    T* next_left_data = next_left->data;
+                    next_left->data = this->data;
+                    data = next_left_data;
+                    right_child = right_child->removeTreeNode(target_data);
                 } else if (left_child != nullptr && right_child != nullptr){
                     TreeNode* next_left = right_child->getLeftest();
                     T* next_left_data = next_left->data;
@@ -176,6 +178,15 @@ class AVLTree {
                 return left_child->getLeftest();
             }
         }
+
+        TreeNode* getRightest(){
+            if (right_child== nullptr){
+                return this;
+            } else {
+                return right_child->getLeftest();
+            }
+        }
+
 
         static int getHeight (TreeNode* node){
             if (node == nullptr){

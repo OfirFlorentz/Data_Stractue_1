@@ -27,6 +27,8 @@ CMakeFiles/hw1_wet.dir/library1.cpp.o: ../library1.h
 
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../AVLTree.h
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../DC.h
+CMakeFiles/hw1_wet.dir/main.cpp.o: ../DCM.h
+CMakeFiles/hw1_wet.dir/main.cpp.o: ../Node.h
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../Queue.h
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../library1.h
 CMakeFiles/hw1_wet.dir/main.cpp.o: ../main.cpp
