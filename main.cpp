@@ -51,6 +51,7 @@ int main() {
     //cout << values[abs(dcm.requestServer(11, 1, 1, &x))] << endl;
     cout << values[abs(dcm.requestServer(7, 0, 1, &x))] << endl;
 
+
     dcm.GetDataCentersByOS(1, &arr, &x);
 
     for(int i = 0; i < x; i++)

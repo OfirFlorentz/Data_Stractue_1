@@ -115,5 +115,6 @@ StatusType DCM::GetDataCentersByOS(int os, int **dataCenters, int *numOfDataCent
 
         (*dataCenters)[j++] = in_order_elements[i]->getId();
     }
+    return SUCCESS;
 }
 
