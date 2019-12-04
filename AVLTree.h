@@ -146,6 +146,8 @@ class AVLTree {
                     right_child = left_child->right_child;
                     TreeNode* temp = left_child;
                     left_child = left_child->left_child;
+                    temp->right_child = nullptr;
+                    temp->left_child = nullptr;
                     delete temp;
                 } else if (left_child == nullptr && right_child != nullptr){
                     data = right_child->data;
@@ -153,6 +155,8 @@ class AVLTree {
                     left_child = right_child->left_child;
                     TreeNode* temp = right_child;
                     right_child = right_child->right_child;
+                    temp->right_child = nullptr;
+                    temp->left_child = nullptr;
                     delete temp;
                 } else if (left_child != nullptr && right_child != nullptr){
                     TreeNode* next_left = right_child->getLeftest();
