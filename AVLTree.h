@@ -279,6 +279,9 @@ AVLStatus AVLTree<T>::insertTreeNode(T *data) {
         T* new_data = root->getData(data);
         if (old_data == nullptr && new_data != nullptr){
             num_nodes++;
+            return AVL_SUCCESS;
+        } else {
+            return NODE_ALREADY_EXIST;
         }
     }
     return AVL_SUCCESS;
