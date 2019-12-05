@@ -27,10 +27,11 @@ StatusType DCM::removeDataCenter(int id) {
         return INVALID_INPUT;
     DC temp(id, 1);
     DC* temp_ptr = dc_tree.getData(&temp);
-    DCNode node_windows(id,temp_ptr->numOfWindows());
-    AVLStatus result = windows_tree.removeTreeNode(&node_windows);
-    if(result == NODE_NOT_EXIST)
+    if (temp_ptr == nullptr){
         return FAILURE;
+    }
+    DCNode node_windows(id,temp_ptr->numOfWindows());
+    windows_tree.removeTreeNode(&node_windows);
     temp_ptr = dc_tree.getData(&temp);
     DCNode node_linux(id,temp_ptr->numOfLinux());
     linux_tree.removeTreeNode(&node_linux);
