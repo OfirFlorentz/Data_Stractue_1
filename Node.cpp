@@ -9,7 +9,7 @@ bool operator > (const DCNode &first, const DCNode &second) {
         return true;
     else if(first.value < second.value)
         return false;
-    return (first.id>second.id);
+    return (first.id<second.id);
 }
 
 bool operator > ( DCNode &first,  DCNode &second) {
@@ -17,7 +17,7 @@ bool operator > ( DCNode &first,  DCNode &second) {
         return true;
     else if(first.value < second.value)
         return false;
-    return (first.id>second.id);
+    return (first.id<second.id);
 }
 
 bool operator < (const DCNode &first, const DCNode &second) {
