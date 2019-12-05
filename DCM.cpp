@@ -103,10 +103,11 @@ StatusType DCM::freeServer(int dc_id, int server_id) {
 }
 
 StatusType DCM::GetDataCentersByOS(int os, int **dataCenters, int *numOfDataCenters) {
+    if(servers_counter == 0)
+        return FAILURE;
     *numOfDataCenters = servers_counter;
     DCNode** in_order_elements;
-    *dataCenters= new int[servers_counter];
-
+    *dataCenters= (int*)malloc(sizeof(int) * servers_counter);
     if(os == 0) {
         in_order_elements = linux_tree.inorderArr();
     } else {
