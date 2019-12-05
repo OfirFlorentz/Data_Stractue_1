@@ -24,6 +24,10 @@ public:
     StatusType requestServer(int dc_id, int server_id, int os, int* assigned_id);
     StatusType freeServer(int dc_id, int server_id);
     StatusType GetDataCentersByOS(int os, int **dataCenters, int* numOfDataCenters);
+
+    int getCounter(){
+        return servers_counter;
+    };
 };
 
 

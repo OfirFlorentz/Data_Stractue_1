@@ -49,10 +49,12 @@ int main() {
     cout << values[dcm.addDataCenter(9, 1)] << endl;
     cout << values[dcm.addDataCenter(10, 2)] << endl;
     cout << values[dcm.addDataCenter(11, 1)] << endl;
-    //cout << values[abs(dcm.requestServer(11, 1, 1, &x))] << endl;
+    cout << values[dcm.removeDataCenter(7)] << endl;
     cout << values[abs(dcm.requestServer(7, 0, 1, &x))] << endl;
+    cout << values[abs(dcm.requestServer(7, -1, 1, &x))] << endl;
     cout << values[abs(dcm.requestServer(11, 0, 1, &x))] << endl;
-    cout << values[abs(dcm.requestServer(9, 0, 0, &x))] << endl;
+    cout << values[dcm.removeDataCenter(11)] << endl;
+    cout << "counter is" << dcm.getCounter() << endl;
 
 
     dcm.GetDataCentersByOS(1, &arr, &x);

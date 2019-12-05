@@ -26,13 +26,15 @@ StatusType DCM::removeDataCenter(int id) {
     if (id <= 0)
         return INVALID_INPUT;
     DC temp(id, 1);
+    DC* temp_ptr = dc_tree.getData(&temp);
     AVLStatus result = dc_tree.removeTreeNode(&temp);
     if(result == NODE_NOT_EXIST)
         return FAILURE;
-    DCNode node_temp(id,1);
-    windows_tree.removeTreeNode(&node_temp); //num of servers is not importent for compering
-    linux_tree.removeTreeNode(&node_temp);
-    servers_counter++;
+    DCNode node_windows(id,temp_ptr->numOfWindows());
+    windows_tree.removeTreeNode(&node_windows); //num of servers is not importent for compering
+    DCNode node_linux(id,temp_ptr->numOfLinux());
+    linux_tree.removeTreeNode(&node_linux);
+    servers_counter--;
     return SUCCESS;
 }
 
