@@ -40,7 +40,7 @@ int main() {
     }
 
     */
-    DCM* ptr = new DCM;
+/*    DCM* ptr = new DCM;
     DCM& dcm = *ptr;
     int x;
     int* arr;
@@ -60,7 +60,85 @@ int main() {
     dcm.GetDataCentersByOS(1, &arr, &x);
 
     for(int i = 0; i < x; i++)
-        cout << arr[i] << endl;
+        cout << arr[i] << endl;*/
+
+
+    DCM * dcm1 = new DCM();
+    dcm1->addDataCenter(10,51);
+    dcm1->addDataCenter(11,299);
+    dcm1->addDataCenter(8,231);
+    dcm1->addDataCenter(9,231);
+    dcm1->addDataCenter(6,231);
+
+    dcm1->removeDataCenter(6);
+    //cout << dcm1->removeDataCenter(7) << endl;
+
+    //dcm1->addDataCenter(9,23);
+    //cout << dcm1->removeDataCenter(7) << endl;
+
+    int  num;
+    int * datacenters;
+
+    dcm1->GetDataCentersByOS(0,&datacenters,&num);
+
+    for (int i = 0; i < num ; ++i) {
+        cout << i << ": " << datacenters[i]  << endl;
+    }
+
+
+    int * a = new int(6);
+    int * new_a = new int (6);
+
+    int * b = new int(8);
+    //char* new_b = new char('b');
+    int* c = new int(9);
+    int * d = new int(10);
+
+    int * e = new int (11);
+
+    //char* new_c = new char('c');
+
+
+    AVLTree<int >* tree = new AVLTree<int >();
+    //insert shit
+    //tree->insertTreeNode(a);
+
+    //tree->insertTreeNode(e);
+    tree->insertTreeNode(d);
+    tree->insertTreeNode(e);
+    tree->insertTreeNode(b);
+    tree->insertTreeNode(c);
+    tree->insertTreeNode(a);
+
+    //tree->insertTreeNode(d);
+    //tree->insertTreeNode(f);
+
+
+    tree->removeTreeNode(new_a);
+    //tree->removeTreeNode(new_b);
+    //tree->removeTreeNode(new_c);
+
+    //tree->insertTreeNode(new_c);
+
+
+
+    tree->printTree();
+    //tree->insertTreeNode(c);
+
+    cout << tree->getNumNodes() << endl;
+
+    int ** arr = tree->inorderArr();
+
+    for (int i = 0; i < tree->getNumNodes() ; ++i) {
+        cout << *arr[i] << ",";
+    }
+
+    delete arr;
+
+    delete tree;
+
+
+
     /*
     cout << "remove " << values[dcm.removeDataCenter(8)] << endl;
     cout << "remove " << values[dcm.removeDataCenter(8)] << endl;
@@ -73,6 +151,6 @@ int main() {
     cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
     cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
      */
-    delete ptr;
+    //delete ptr;
     return 0;
 }
