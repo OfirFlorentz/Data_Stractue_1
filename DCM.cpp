@@ -27,19 +27,14 @@ StatusType DCM::removeDataCenter(int id) {
         return INVALID_INPUT;
     DC temp(id, 1);
     DC* temp_ptr = dc_tree.getData(&temp);
-    if (temp_ptr == nullptr){
+    DCNode node_windows(id,temp_ptr->numOfWindows());
+    AVLStatus result = windows_tree.removeTreeNode(&node_windows);
+    if(result == NODE_NOT_EXIST)
         return FAILURE;
-    }
-    DC temp2(id, 1);
-    DC* temp_ptr2 = dc_tree.getData(&temp);
-    DCNode node_windows(id,temp_ptr2->numOfWindows());
-    windows_tree.removeTreeNode(&node_windows);
-    DC temp3(id, 1);
-    DC* temp_ptr3 = dc_tree.getData(&temp3);
-    DCNode node_linux(id,temp_ptr3->numOfLinux());
+    temp_ptr = dc_tree.getData(&temp);
+    DCNode node_linux(id,temp_ptr->numOfLinux());
     linux_tree.removeTreeNode(&node_linux);
-    DC temp4(id, 1);
-    dc_tree.removeTreeNode(&temp4);
+    dc_tree.removeTreeNode(&temp);
     servers_counter--;
     return SUCCESS;
 }
