@@ -108,6 +108,9 @@ StatusType DCM::GetDataCentersByOS(int os, int **dataCenters, int *numOfDataCent
     *numOfDataCenters = servers_counter;
     DCNode** in_order_elements;
     *dataCenters= (int*)malloc(sizeof(int) * servers_counter);
+    if (*dataCenters == NULL){
+        return ALLOCATION_ERROR;
+    }
     if(os == 0) {
         in_order_elements = linux_tree.inorderArr();
     } else {
