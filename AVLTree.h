@@ -135,7 +135,7 @@ class AVLTree {
             }
         }
 
-        TreeNode* removeTreeNode(const T* target_data){
+        TreeNode* removeTreeNode(T* target_data){
             if (*data == *target_data){
                 if (left_child == nullptr && right_child == nullptr){
                     delete this;
@@ -242,7 +242,7 @@ public:
     AVLTree(const AVLTree &tree) = default;
     int getNumNodes();
     AVLStatus insertTreeNode(T* data);
-    AVLStatus removeTreeNode(const T* data);
+    AVLStatus removeTreeNode(T* data);
     bool isExist(T* target_data);
     T* getData(const T* target_data);
     void printTree();
@@ -288,7 +288,7 @@ AVLStatus AVLTree<T>::insertTreeNode(T *data) {
 }
 
 template<class T>
-AVLStatus AVLTree<T>::removeTreeNode(const T *data) {
+AVLStatus AVLTree<T>::removeTreeNode(T *data) {
     if (root == nullptr){
         return NODE_NOT_EXIST;
     } else if (root->getData(data) == nullptr) {
