@@ -135,7 +135,7 @@ class AVLTree {
             }
         }
 
-        TreeNode* removeTreeNode(T* target_data){
+        TreeNode* removeTreeNode(const T* target_data){
             if (*data == *target_data){
                 if (left_child == nullptr && right_child == nullptr){
                     delete this;
@@ -227,7 +227,7 @@ class AVLTree {
             }
         }
 
-        T* getData(T* target_data);
+        T* getData(const T* target_data);
 
         void fillInorderArr(int* i, T** arr);
     };
@@ -242,9 +242,9 @@ public:
     AVLTree(const AVLTree &tree) = default;
     int getNumNodes();
     AVLStatus insertTreeNode(T* data);
-    AVLStatus removeTreeNode(T* data);
+    AVLStatus removeTreeNode(const T* data);
     bool isExist(T* target_data);
-    T* getData(T* target_data);
+    T* getData(const T* target_data);
     void printTree();
     T** inorderArr();
     };
@@ -288,7 +288,7 @@ AVLStatus AVLTree<T>::insertTreeNode(T *data) {
 }
 
 template<class T>
-AVLStatus AVLTree<T>::removeTreeNode(T *data) {
+AVLStatus AVLTree<T>::removeTreeNode(const T *data) {
     if (root == nullptr){
         return NODE_NOT_EXIST;
     } else if (root->getData(data) == nullptr) {
@@ -308,7 +308,7 @@ bool AVLTree<T>::isExist(T *target_data) {
 }
 
 template<class T>
-T *AVLTree<T>::getData(T *target_data) {
+T *AVLTree<T>::getData(const T *target_data) {
     if(root == nullptr)
         return nullptr;
     return root->getData(target_data);
@@ -357,7 +357,7 @@ AVLTree<T>::TreeNode::~TreeNode() {
 }
 
 template<class T>
-T *AVLTree<T>::TreeNode::getData(T *target_data) {
+T *AVLTree<T>::TreeNode::getData(const T *target_data) {
     if (*data == *target_data){
         return data;
     } else if (*target_data < *data){
