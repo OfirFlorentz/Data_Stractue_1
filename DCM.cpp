@@ -32,7 +32,6 @@ StatusType DCM::removeDataCenter(int id) {
     }
     DCNode node_windows(id,temp_ptr->numOfWindows());
     windows_tree.removeTreeNode(&node_windows);
-    temp_ptr = dc_tree.getData(&temp);
     DCNode node_linux(id,temp_ptr->numOfLinux());
     linux_tree.removeTreeNode(&node_linux);
     dc_tree.removeTreeNode(&temp);
