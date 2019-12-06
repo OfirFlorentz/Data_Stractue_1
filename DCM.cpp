@@ -31,6 +31,7 @@ StatusType DCM::removeDataCenter(int id) {
     AVLStatus result = windows_tree.removeTreeNode(&node_windows);
     if(result == NODE_NOT_EXIST)
         return FAILURE;
+    temp_ptr = dc_tree.getData(&temp);
     DCNode node_linux(id,temp_ptr->numOfLinux());
     linux_tree.removeTreeNode(&node_linux);
     dc_tree.removeTreeNode(&temp);
