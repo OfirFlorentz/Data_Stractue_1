@@ -7,18 +7,24 @@
 StatusType DCM::addDataCenter(int id, int num_of_servers) {
     if (num_of_servers <= 0 || id <= 0)
         return INVALID_INPUT;
-    DC* new_dc = new DC(id, num_of_servers);
+    DC* new_dc;
+    try {
+        new_dc = new DC(id, num_of_servers);
+    } catch (std::bad_alloc){
+        return ALLOCATION_ERROR;
+    }
     if(dc_tree.isExist(new_dc)) {
         delete new_dc;
         return FAILURE;
+    } else {
+        dc_tree.insertTreeNode(new_dc);
+        DCNode* new_windows = new DCNode(id , 0);
+        DCNode* new_linux = new DCNode(id, num_of_servers);
+        windows_tree.insertTreeNode(new_windows);
+        linux_tree.insertTreeNode(new_linux);
+        servers_counter++;
+        return SUCCESS;
     }
-    dc_tree.insertTreeNode(new_dc);
-    DCNode* new_windows = new DCNode(id , 0);
-    DCNode* new_linux = new DCNode(id, num_of_servers);
-    windows_tree.insertTreeNode(new_windows);
-    linux_tree.insertTreeNode(new_linux);
-    servers_counter++;
-    return SUCCESS;
 }
 
 StatusType DCM::removeDataCenter(int id) {
