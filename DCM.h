@@ -19,12 +19,18 @@ class DCM {
 
 public:
     DCM():dc_tree(), linux_tree(), windows_tree(), servers_counter(0){};
+    // Add a new data center to the data structure
     StatusType addDataCenter(int id, int num_of_servers);
+    // Remove an existing data center from the data structure.
     StatusType removeDataCenter(int id);
+    // Request a server from a specific data center.
     StatusType requestServer(int dc_id, int server_id, int os, int* assigned_id);
+    // Free a server from a specific data center.
     StatusType freeServer(int dc_id, int server_id);
+    // Returns an array with the ids of the data centers ordered by the number
+    // of servers they have from a specific operating system.
     StatusType GetDataCentersByOS(int os, int **dataCenters, int* numOfDataCenters);
-
+    // returns how many data servers in the data structure.
     int getCounter(){
         return servers_counter;
     };
