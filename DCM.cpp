@@ -96,7 +96,6 @@ StatusType DCM::freeServer(int dc_id, int server_id) {
         return FAILURE;
     }
     catch(const std::exception& e) {
-        cout << "somthingworng " <<  e.what();
         return FAILURE;
     }
     return SUCCESS;
