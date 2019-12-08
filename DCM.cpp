@@ -72,7 +72,7 @@ void DCM::updateServers(int server_id, int num_of_windows, int num_of_linux, int
     DCNode* new_windows = new DCNode(server_id , prev_wind);
     DCNode* new_linux = new DCNode(server_id, prev_lin);
     windows_tree.removeTreeNode(new_windows);
-    linux_tree.removeTreeNode(new_windows);
+    linux_tree.removeTreeNode(new_linux);
     delete new_windows;
     delete new_linux;
     new_windows = new DCNode(server_id , num_of_windows);
