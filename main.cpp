@@ -64,18 +64,25 @@ int main() {
 
 
     DCM dcm;
-    int x;
-    cout << values[abs(dcm.addDataCenter(8, 2))] << endl;
-    cout << "remove " << values[abs(dcm.removeDataCenter(8))] << endl;
-    cout << values[abs(dcm.addDataCenter(8, 5))] << endl;
-    cout << values[abs(dcm.requestServer(8,0,1, &x))] << " x is: " << x <<  endl;
+    int x =0;
+    cout << values[abs(dcm.addDataCenter(8, 20))] << endl;
     cout << values[abs(dcm.requestServer(8,0,1, &x))] << " x is: " << x <<  endl;
     cout << values[abs(dcm.freeServer(8,0))] << " free 0" <<  endl;
-    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
-    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
-    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
-    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
-    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,0,0, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.freeServer(8,0))] << " free 0" <<  endl;
+    cout << values[abs(dcm.requestServer(8,5,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,8,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,5,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,8,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,5,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,8,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,5,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,8,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,5,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,8,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.freeServer(8,8))] << " free 0" <<  endl;
+    cout << values[abs(dcm.freeServer(8,5))] << " free 0" <<  endl;
+
 
     //delete ptr;
     return 0;
