@@ -18,11 +18,9 @@ enum AVLStatus {
     NODE_ALREADY_EXIST
 };
 
+/** Balanced binary search tree*/
 template <class T>
 class AVLTree {
-
-
-
 
     class TreeNode{
         T* data;
@@ -30,26 +28,31 @@ class AVLTree {
         TreeNode* left_child;
         TreeNode* right_child;
     public:
+        // Constructor
         explicit TreeNode(T* target_data);
+        // Destructor
         ~TreeNode();
+        // Check if Tree Node has children. Returns true if no, false otherwise.
         bool isLeaf();
-        
+        // Returns Tree Node's left child
         TreeNode* getLeft() {
             return left_child;
         }
-
+        // Returns Tree Node's right child
         TreeNode* getRight() {
             return right_child;
         }
-
+        // Returns Tree Node data
         T& getData() {
             return *data;
         }
-
+        // Performs left left rotate
         TreeNode* llRotate(){
+            // Update pointers
             TreeNode* node = this->left_child;
             this->left_child = this->left_child->right_child;
             node->right_child = this;
+            // Update new node heights
             node->right_child->height =
                     max(getHeight(node->right_child->left_child),
                             getHeight(node->right_child->right_child)) + 1;
@@ -58,11 +61,13 @@ class AVLTree {
                             getHeight(node->right_child)) + 1;
             return node;
         }
-
+        // Performs right right rotate
         TreeNode* rrRotate(){
+            // Update pointers
             TreeNode* node = this->right_child;
             this->right_child = this->right_child->left_child;
             node->left_child = this;
+            // Update new node heights
             node->left_child->height =
                     max(getHeight(node->left_child->left_child),
                             getHeight(node->left_child->right_child)) + 1;
@@ -71,25 +76,29 @@ class AVLTree {
                             getHeight(node->right_child)) + 1;
             return node;
         }
-
+        // Performs right left rotate
         TreeNode* rlRotate(){
+            // Update pointers
             this->right_child = this->right_child->llRotate();
             TreeNode* node = this->rrRotate();
+            // Update new node heights
             node->height =
                     max(getHeight(node->left_child),
                         getHeight(node->right_child)) + 1;
             return node;
         }
-
+        // Performs left right rotate
         TreeNode* lrRotate(){
+            // Update pointers
             this->left_child = this->left_child->rrRotate();
             TreeNode* node = this->llRotate();
+            // Update new node heights
             node->height =
                     max(getHeight(node->left_child),
                         getHeight(node->right_child)) + 1;
             return node;
         }
-
+        // If node's balance factor is 2 or -2, balance it.
         TreeNode* balanceTree (){
             this->height = max(getHeight(right_child),getHeight(left_child))+1;
             if (getBalanceFactor(this) == 2 &&
@@ -108,7 +117,7 @@ class AVLTree {
                 return this;
             }
         }
-
+        // Insert a new node to the search tree
         TreeNode* insertNode(T* new_data){
             if ( *data < *new_data) {
                 if (right_child != nullptr) {
@@ -134,9 +143,12 @@ class AVLTree {
                 return this;
             }
         }
-
+        // Remove a node from the search tree
         TreeNode* removeTreeNode(T* target_data){
             if (*data == *target_data){
+                // If it is a left delete it, Else repalace it with the next
+                // or prev inorder node.
+                // It will seep until it becomes a leaf and then removed.
                 if (left_child == nullptr && right_child == nullptr){
                     delete this;
                     return nullptr;
@@ -159,6 +171,8 @@ class AVLTree {
                     data = next_left_data;
                     right_child = right_child->removeTreeNode(target_data);
                 }
+            // If node data is not equal to target data
+            // continue the binary search
             } else if ( *target_data < *data){
                 if (left_child != nullptr){
                     left_child = left_child->removeTreeNode(target_data);
@@ -170,7 +184,7 @@ class AVLTree {
             }
             return this->balanceTree();
         }
-
+        // Get next node of inorder order.
         TreeNode* getLeftest(){
             if (left_child== nullptr){
                 return this;
@@ -178,7 +192,7 @@ class AVLTree {
                 return left_child->getLeftest();
             }
         }
-
+        // Get prev node of inorder order.
         TreeNode* getRightest(){
             if (right_child== nullptr){
                 return this;
@@ -186,8 +200,7 @@ class AVLTree {
                 return right_child->getLeftest();
             }
         }
-
-
+        // Get the height of a node
         static int getHeight (TreeNode* node){
             if (node == nullptr){
                 return -1;
@@ -195,11 +208,11 @@ class AVLTree {
                 return node->getHeight();
             }
         }
-
+        // Get the height of a node
         int getHeight(){
             return this->height;
         }
-
+        // Get the balance factor of a node
         static int getBalanceFactor (const TreeNode * node){
             if (node == nullptr){
                 return 0;
@@ -207,7 +220,7 @@ class AVLTree {
                 return getHeight(node->left_child) - getHeight(node->right_child);
             }
         }
-
+        // Print the tree in inorder order
         void inorderOutput(){
             if (left_child != nullptr){
                 left_child->inorderOutput();
@@ -226,9 +239,9 @@ class AVLTree {
                 right_child->inorderOutput();
             }
         }
-
+        // Get data of a node
         T* getData(const T* target_data);
-
+        // Fill array with tree data ordered in inorder order.
         void fillInorderArr(int* i, T** arr);
     };
 
@@ -237,15 +250,26 @@ class AVLTree {
 
 
 public:
+    // Constructor
     AVLTree();
+    // Destructor
     ~AVLTree();
+    // Constructor
     AVLTree(const AVLTree &tree) = default;
+    // Return num of nodes in the tree
     int getNumNodes();
+    // Insert a new node the tree
     AVLStatus insertTreeNode(T* data);
+    // Remove a node from the tree
     AVLStatus removeTreeNode(T* data);
+    // Returns true if the is a node in the tree with same data as target data
+    // False otherwise.
     bool isExist(T* target_data);
+    // Returns data which equals to target data
     T* getData(const T* target_data);
+    // Prints The tree
     void printTree();
+    // Returns an array fo the tree in inorder order.
     T** inorderArr();
     };
 
