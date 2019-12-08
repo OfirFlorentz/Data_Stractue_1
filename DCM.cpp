@@ -4,7 +4,6 @@
 
 #include "DCM.h"
 
-
 StatusType DCM::addDataCenter(int id, int num_of_servers) {
     if (num_of_servers <= 0 || id <= 0)
         return INVALID_INPUT;

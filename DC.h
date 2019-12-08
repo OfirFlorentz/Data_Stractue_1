@@ -1,6 +1,3 @@
-//
-// Created by ofir on 01/12/2019.
-//
 
 #ifndef HW1_WET_DC_H
 #define HW1_WET_DC_H
@@ -9,9 +6,6 @@
 #include <iostream>
 #include "Queue.h"
 #include "library1.h"
-
-//enum StatusType { INVALID_INPUT, FAILURE, SUCCESS};
-enum OS {LINUX, WINDOWS};
 
 using namespace std;
 

@@ -1,6 +1,6 @@
 #include <iostream>
 #include "DCM.h"
-#include <math.h>
+#include <cmath>
 
 using std::cout;
 using std::endl;
@@ -36,7 +36,7 @@ int main() {
         d.freeServer(55);
         cout << d.requestServer(0, 1) << endl;
     } catch (const std::exception& e) {
-        cout << e.what() << endl;
+        cout << e.wha t() << endl;
     }
 
     */
@@ -63,94 +63,20 @@ int main() {
         cout << arr[i] << endl;*/
 
 
-    DCM * dcm1 = new DCM();
-    dcm1->addDataCenter(10,51);
-    dcm1->addDataCenter(11,299);
-    dcm1->addDataCenter(8,231);
-    dcm1->addDataCenter(9,231);
-    dcm1->addDataCenter(6,231);
+    DCM dcm;
+    int x;
+    cout << values[abs(dcm.addDataCenter(8, 2))] << endl;
+    cout << "remove " << values[abs(dcm.removeDataCenter(8))] << endl;
+    cout << values[abs(dcm.addDataCenter(8, 5))] << endl;
+    cout << values[abs(dcm.requestServer(8,0,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,0,1, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.freeServer(8,0))] << " free 0" <<  endl;
+    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
+    cout << values[abs(dcm.requestServer(8,1,0, &x))] << " x is: " << x <<  endl;
 
-    dcm1->removeDataCenter(6);
-    //cout << dcm1->removeDataCenter(7) << endl;
-
-    //dcm1->addDataCenter(9,23);
-    //cout << dcm1->removeDataCenter(7) << endl;
-
-    int  num;
-    int * datacenters;
-
-    dcm1->GetDataCentersByOS(0,&datacenters,&num);
-
-    for (int i = 0; i < num ; ++i) {
-        cout << i << ": " << datacenters[i]  << endl;
-    }
-
-
-    int * a = new int(6);
-    int * new_a = new int (6);
-
-    int * b = new int(8);
-    //char* new_b = new char('b');
-    int* c = new int(9);
-    int * d = new int(10);
-
-    int * e = new int (11);
-
-    //char* new_c = new char('c');
-
-
-    AVLTree<int >* tree = new AVLTree<int >();
-    //insert shit
-    //tree->insertTreeNode(a);
-
-    //tree->insertTreeNode(e);
-    tree->insertTreeNode(d);
-    tree->insertTreeNode(e);
-    tree->insertTreeNode(b);
-    tree->insertTreeNode(c);
-    tree->insertTreeNode(a);
-
-    //tree->insertTreeNode(d);
-    //tree->insertTreeNode(f);
-
-
-    tree->removeTreeNode(new_a);
-    //tree->removeTreeNode(new_b);
-    //tree->removeTreeNode(new_c);
-
-    //tree->insertTreeNode(new_c);
-
-
-
-    tree->printTree();
-    //tree->insertTreeNode(c);
-
-    cout << tree->getNumNodes() << endl;
-
-    int ** arr = tree->inorderArr();
-
-    for (int i = 0; i < tree->getNumNodes() ; ++i) {
-        cout << *arr[i] << ",";
-    }
-
-    delete arr;
-
-    delete tree;
-
-
-
-    /*
-    cout << "remove " << values[dcm.removeDataCenter(8)] << endl;
-    cout << "remove " << values[dcm.removeDataCenter(8)] << endl;
-    cout << values[dcm.requestServer(8,0,1, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,0,1, &x)] << " x is: " << x <<  endl;
-    cout << "free" << values[dcm.freeServer(5,0)] << x <<  endl ;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-    cout << values[dcm.requestServer(5,3,0, &x)] << " x is: " << x <<  endl;
-     */
     //delete ptr;
     return 0;
 }

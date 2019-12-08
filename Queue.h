@@ -120,7 +120,8 @@ void Queue<T>::dequeueByValue(Chain<T>* chain) {
     if(chain == nullptr)
         throw Nullptr();
     if (first == chain) {
-        dequeue();
+        dequeue(); //make cur size smaller in 1
+        cur_size++; //fix the problem above
     } else if (last == chain) {
         last = chain->prev;
         last->next = nullptr;

@@ -1,17 +1,3 @@
-/***************************************************************************/
-/*                                                                         */
-/* 234218 Data DSs 1, Winter 2019-2020                                     */
-/* Homework : Wet 1                                                        */
-/*                                                                         */
-/***************************************************************************/
-
-/***************************************************************************/
-/*                                                                         */
-/* File Name : main1.cpp                                                   */
-/*                                                                         */
-/* Holds the "int main()" function and the parser of the shell's           */
-/* command line.                                                           */
-/***************************************************************************/
 
 #include <assert.h>
 #include <stdio.h>
@@ -62,7 +48,7 @@ static const char* ReturnValToStr(int val) {
 }
 
 /* we assume maximum string size is not longer than 256  */
-#define MAX_STRING_INPUT_SIZE (5000)
+#define MAX_STRING_INPUT_SIZE (20000)
 #define MAX_BUFFER_SIZE       (255)
 
 #define StrCmp(Src1,Src2) ( strncmp((Src1),(Src2),strlen(Src1)) == 0 )
