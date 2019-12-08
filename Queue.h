@@ -1,6 +1,6 @@
-//
-// Created by ofir on 25/11/2019.
-//
+/**This class is queue. it implented with two diractions linked nodes**/
+/**The Queue suppoort the basic queue functions like enqueue and dequeue and also support removing element from the
+ middle of the queue**/
 
 #ifndef HW1_WET_QUEUE_H
 #define HW1_WET_QUEUE_H
@@ -24,25 +24,34 @@ public:
 
 template <class T>
 class Queue {
-    Chain<T>* first;
+    //Pointer to the first node in the queue
     Chain<T>* last;
+    //Pointer to the last node in the queue
+    Chain<T>* first;
+    //current size of the queue
     int cur_size;
 public:
+    /* constructor */
     explicit Queue();
+    /* destructor */
     ~Queue();
+    /* c'contructor, and operator == are not implemted */
+    bool operator==(const Queue&) = delete;
+    Queue(const Queue&) = delete;
+    /* remove first element of the queue */
     void dequeue();
+    /* remove the element we get as an input from the queue */
     void dequeueByValue(Chain<T>*);
-    bool isExist(const T&) const;
+    /* Add element to the end of the queue */
     Chain<T>* enqueue(const T);
+    /* Return the first element in the queue */
     T& top() const;
+    /* Return the true if queue is empty, false otherwise*/
     bool isEmpty() const ;
-    int getCurrentSize() const;
-    class OverFlow : public std::exception{} ;
+    /* Exceptions classes */
     class Empty : public std::exception{} ;
-    class ElementDoesntExist : public std::exception{} ;
     class Nullptr : public std::exception{} ;
 };
-
 
 
 
@@ -54,7 +63,7 @@ Queue<T>::Queue() : cur_size(0) {
     last = nullptr;
 }
 
-//destrector
+//destructor
 template <class T>
 Queue<T>:: ~Queue() {
     Chain<T> *cur = first;
@@ -110,10 +119,6 @@ bool Queue<T>::isEmpty() const {
     return cur_size == 0;
 }
 
-template <class T>
-int Queue<T>::getCurrentSize() const {
-    return cur_size;
-}
 
 template <class T>
 void Queue<T>::dequeueByValue(Chain<T>* chain) {
@@ -132,18 +137,6 @@ void Queue<T>::dequeueByValue(Chain<T>* chain) {
         delete chain;
     }
     cur_size--;
-}
-
-
-template <class T>
-bool Queue<T>::isExist(const T& value) const{
-    Chain<T> *cur = first;
-    while(cur != nullptr){
-        if(cur->value == value)
-            return true;
-        cur = cur->next;
-    }
-    return false;
 }
 
 

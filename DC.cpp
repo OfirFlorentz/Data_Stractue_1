@@ -4,7 +4,7 @@
 
 #include "DC.h"
 
-//
+//Creating two queue of servers. Creating arr of pointers to the place in queue, and arr of servers.
 DC::DC(int id, int num_of_servers) : id(id), num_of_servers(num_of_servers), num_of_windows(0), windows(),lin() {
     if(id <= 0 || num_of_servers <= 0)
         throw InvalidInput();
