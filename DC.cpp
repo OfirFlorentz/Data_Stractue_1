@@ -4,7 +4,7 @@
 
 #include "DC.h"
 
-//we have to check in dcm there is no other DC with same id
+//Creating two queue of servers. Creating arr of pointers to the place in queue, and arr of servers.
 DC::DC(int id, int num_of_servers) : id(id), num_of_servers(num_of_servers), num_of_windows(0), windows(),lin() {
     if(id <= 0 || num_of_servers <= 0)
         throw InvalidInput();
@@ -19,6 +19,7 @@ DC::DC(int id, int num_of_servers) : id(id), num_of_servers(num_of_servers), num
     }
 }
 
+/* If the server is busy it freeing the server asked and put him last in queue. Otherwise exception is thrown. */
 void DC::freeServer(int server_id) {
     if(server_id < 0 || server_id >= num_of_servers)
         throw InvalidInput();
@@ -33,6 +34,8 @@ void DC::freeServer(int server_id) {
     }
 }
 
+/* if the server asked is free we assign the OS asked and returned is number to the user. otherwise we assign
+other server that is free and is next one according to the queue */
 int DC::requestServer(int server_id, bool os) {
     if(server_id < 0 || server_id >= num_of_servers)
         throw InvalidInput();
@@ -89,14 +92,23 @@ DC::~DC() {
     delete[] servers;
 }
 
+/* return how many windows server in the DC */
 int DC::numOfWindows() const {
     return num_of_windows;
 }
 
+/* return how many linux server in the DC */
 int DC::numOfLinux() const {
     return num_of_servers-num_of_windows;
 }
 
+/* return how many servers in the DC */
+int DC::numOfServers() const {
+    return num_of_servers;
+}
+
+
+/* overloading of comparing operators. the comparison is according to the server id */
 bool operator==(const DC & first, const DC & second) {
     return(first.id == second.id);
 }
@@ -116,15 +128,6 @@ bool operator<(DC & first, DC & second) {
 ostream &operator<<(ostream &os, const DC &dc) {
     return os << dc.id;
 }
-
-int DC::numOfServers() const {
-    return num_of_servers;
-}
-
-int DC::getID() const {
-    return id;
-}
-
 
 bool operator>(const DC & first, const DC & second) {
     return (!(first < second) && !(first==second));
