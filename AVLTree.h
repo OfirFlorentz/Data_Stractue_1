@@ -137,7 +137,7 @@ class AVLTree {
                     left_child = new_node;
                     return this->balanceTree();
                 }
-            } else if (*new_data == *data){
+            } else {
                 delete this->data;
                 this->data = new_data;
                 return this;
@@ -390,7 +390,7 @@ T *AVLTree<T>::TreeNode::getData(const T *target_data) {
         } else {
             return nullptr;
         }
-    } else if (*data < *target_data){
+    } else {
         if (right_child != nullptr){
             return right_child->getData(target_data);
         } else {
