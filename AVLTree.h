@@ -119,15 +119,10 @@ class AVLTree {
         }
         // Insert a new node to the search tree
         TreeNode* insertNode(T* new_data){
-            if ( *data < *new_data) {
-                if (right_child != nullptr) {
-                    right_child = right_child->insertNode(new_data);
-                    return this->balanceTree();
-                } else {
-                    TreeNode* new_node = new TreeNode(new_data);
-                    right_child = new_node;
-                    return this->balanceTree();
-                }
+            if (*new_data == *data) {
+                delete this->data;
+                this->data = new_data;
+                return this;
             } else if (*new_data < *data){
                 if (left_child != nullptr){
                     left_child = left_child->insertNode(new_data);
@@ -138,9 +133,14 @@ class AVLTree {
                     return this->balanceTree();
                 }
             } else {
-                delete this->data;
-                this->data = new_data;
-                return this;
+                if (right_child != nullptr) {
+                    right_child = right_child->insertNode(new_data);
+                    return this->balanceTree();
+                } else {
+                    TreeNode* new_node = new TreeNode(new_data);
+                    right_child = new_node;
+                    return this->balanceTree();
+                }
             }
         }
         // Remove a node from the search tree
