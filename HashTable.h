@@ -28,6 +28,7 @@ public:
     void removeItem (T* item);
     int getNumItmes() const;
     int getSize() const;
+    void printData();
 };
 
 template<class T>
@@ -65,8 +66,9 @@ void HashTable<T>::IncreaseTable() {
     AVLTree<T>* new_arr = new AVLTree<T>[size];
     for (int i = 0; i < old_size ; ++i) {
         T** temp_arr = arr[i].inorderArr();
-        if (temp_arr != NULL){
-            for (int j = 0; j < sizeof(temp_arr)/sizeof(temp_arr[0]) ; ++j) {
+        int tree_size = arr[i].getNumNodes();
+        if (temp_arr != nullptr){
+            for (int j = 0; j < tree_size ; ++j) {
                 T* temp = new T(*temp_arr[j]);
                 new_arr[HashFunc(temp)].insertTreeNode(temp);
             }
@@ -84,9 +86,11 @@ void HashTable<T>::DecreaseTable() {
     AVLTree<T>* new_arr = new AVLTree<T>[size];
     for (int i = 0; i < old_size ; ++i) {
         T** temp_arr = arr[i].inorderArr();
-        if (temp_arr != NULL){
-            for (int j = 0; j < sizeof(temp_arr)/sizeof(temp_arr[0]) ; ++j) {
-                new_arr[HashFunc(temp_arr[j])].insertTreeNode(temp_arr[j]);
+        int tree_size = arr[i].getNumNodes();
+        if (temp_arr != nullptr){
+            for (int j = 0; j < tree_size ; ++j) {
+                T* temp = new T(*temp_arr[j]);
+                new_arr[HashFunc(temp)].insertTreeNode(temp);
             }
             delete[] temp_arr;
         }
@@ -109,12 +113,20 @@ void HashTable<T>::addItem(T *item) {
 
 template<class T>
 void HashTable<T>::removeItem(T *item) {
-    AVLStatus status = arr[HashFunc(item)].insertTreeNode(item);
+    AVLStatus status = arr[HashFunc(item)].removeTreeNode(item);
     if (status == AVL_SUCCESS){
         num_itmes--;
         if (num_itmes * 4 < size && num_itmes > initial_size){
             this->DecreaseTable();
         }
+    }
+}
+
+template<class T>
+void HashTable<T>::printData() {
+    for (int i = 0; i < size ; ++i) {
+        cout << i << ":\n";
+        arr[i].printTree();
     }
 }
 
