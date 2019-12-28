@@ -10,7 +10,7 @@ using std::endl;
 
 int main() {
     int * a = new int(6);
-    int * new_a = new int (6);
+    //int * new_a = new int (6);
     int * b = new int(8);
     int* c = new int(9);
     int * d = new int(10);
@@ -23,5 +23,11 @@ int main() {
     table->addItem(d);
     table->addItem(e);
     delete table;
+    delete a;
+    delete b;
+    delete c;
+    delete d;
+    delete e;
+
     return 0;
 }
